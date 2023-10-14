@@ -9,20 +9,20 @@ Matej Franjić | mfranjic21@student.foi.hr | 0016154467 | mfranjic21
 Marko Saško | msasko1@student.foi.hr | 0016142095 | msasko1
 
 ## Opis domene
-Ovim projektom bi radili na izradi mobilne aplikacije za iznajmljivanje vozila koja bi pokrila funkcionalnosti od prijavljivavnja korisnika sve do ispisa samo računa i ispisa istog.
+Ovim projektom bi radili na izradi desktop aplikacije za iznajmljivanje vozila koja bi pokrila funkcionalnosti od prijavljivavnja korisnika kao admina i uređivanje svega što je korisnicima dostupno, dok bi mobilna aplikacija bila dostupna korisnicima.
 
 ## Specifikacija projekta
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup aplikaciji potrebno se ulogirati, ovisno o tome kojim podacima se ulogiramo takva ćemo prava dobiti, administrator će imat pravo uređivanja i dodavanja novih vozila dok korisnik može samo iznajmiti. | Marko Saško
-F02 | Dodavanje | Ako se u aplikaciji prijavimo kao admin dobit ćemo mogućnost uređivanja/dodavanja novih vozila koji će se nakon toga vidjeti u glavnom izborniku kao nova vozila za iznajmljivanje. | Marko Saško
-F03 | Ispis u PDF | Ako korisnik nakon završetka iznajmljivanja želi nekako spremiti svoj ugovor o iznajmljivanju vozila, imat će mogućnost spremanja računa u PDF formatu na svoj mobilni uređaj. | Marko Saško
-F04 | Profil | Mogućnost pristupa vlastitom profilu te izmjena podataka kao što su ime i prezime, datum rođenja te eventualno karticu ako je to korisnik odlučio zapamtiti kroz aplikaciju | Luka Pamer
+F01 | Login | Za pristup aplikaciji potrebno se ulogirati, administrator će imat pravo uređivanja i dodavanja novih vozila. | Marko Saško
+F02 | Noviteti | Admin će dobiti mogućnost uređivanja/dodavanja vozila koji će se nakon toga vidjeti u glavnom izborniku kao nova vozila za iznajmljivanje korisnicima na mobilnom uređaju. | Marko Saško
+F03 | Ispis u PDF | Admin ima puno pravo da izlista svaki nalog ili račun za daljnju pohranu na računalo.| Marko Saško
+F04 | Statistička analiza | Statističko praćenje koliko je vozila iznajmljeno od strane kakvih korisnika. | Luka Pamer
 F05 | Izbornik | Mogućnost pregleda svih dostupnih vozila te odabiranje istih, također dodatni izbornici koji bi vodili na druge stavke aplikacije | Luka Pamer
 F06 | Postavke | Mogućnost promjene aplikacijske teme, jezika kako bi se unaprijedilo korisničko iskustvo. | Luka Pamer
-F07 | Filtriranje | S obzirom da se u izborniku nalazi dosta elemenata omogućit ćemo korisnicima da sortiraju popis vozila ili putem tražilice traže točno neko vozilo. | Matej Franjić
-F08 | Iznajmljivanje | Mogućnost korisnika da iznajmi vozilo kroz cijeli proces te na kraju zapis da je vozilo iznajmljeno te račun. | Matej Franjić
+F07 | Filtriranje | Zbog lakšeng snalaženja u glavnom izborniku mogućnost pretrage i filtriranja. | Matej Franjić
+F08 | Uređivanje korisnika | U slučaju da se korisnik ne drži pravila, admin ima mogućnost blokiranja/brisanja korisnika kroz desktop aplikaciju. | Matej Franjić
 F09 | Podrška | Rubrika sa često postavljenim pitanjima u vezi računa i ostalih nejasnoća. | Matej Franjić
 
 ## Tehnologije i oprema
