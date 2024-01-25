@@ -12,7 +12,7 @@ namespace DataAccessLayer.Repositories
     {
         public Employee GetEmployee(string username)
         {
-            using (var context = new RPP2324_T13_DBEntities())
+            using (var context = new RppContext())
             {
                 var query = from e in context.Employee
                             where e.username == username
