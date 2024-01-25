@@ -13,9 +13,9 @@ namespace DataAccessLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RPP2324_T13_DBEntities : DbContext
+    public partial class RppContext : DbContext
     {
-        public RPP2324_T13_DBEntities()
+        public RppContext()
             : base("name=RPP2324_T13_DBEntities")
         {
         }
