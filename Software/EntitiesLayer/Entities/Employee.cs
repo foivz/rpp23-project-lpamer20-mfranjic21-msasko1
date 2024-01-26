@@ -14,6 +14,7 @@ namespace EntitiesLayer.Entities
             Supports = new HashSet<Support>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         [Required]
