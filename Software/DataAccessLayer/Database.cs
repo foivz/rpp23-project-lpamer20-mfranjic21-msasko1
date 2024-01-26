@@ -1,9 +1,10 @@
+using EntitiesLayer.Entities;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace EntitiesLayer
+namespace DataAccessLayer
 {
     public partial class Database : DbContext
     {
@@ -12,22 +13,21 @@ namespace EntitiesLayer
         {
         }
 
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<Reservation> Reservation { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Vehicle> Vehicle { get; set; }
-        public virtual DbSet<Support> Support { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
+        public virtual DbSet<Support> Supports { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>()
-                .HasMany(e => e.Reservation)
+                .HasMany(e => e.Reservations)
                 .WithRequired(e => e.Customer)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Customer>()
-                .HasMany(e => e.Support)
+                .HasMany(e => e.Supports)
                 .WithRequired(e => e.Customer)
                 .HasForeignKey(e => e.user)
                 .WillCascadeOnDelete(false);
@@ -61,7 +61,7 @@ namespace EntitiesLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Support)
+                .HasMany(e => e.Supports)
                 .WithOptional(e => e.Employee1)
                 .HasForeignKey(e => e.employee);
 
@@ -70,7 +70,7 @@ namespace EntitiesLayer
                 .HasPrecision(10, 2);
 
             modelBuilder.Entity<Vehicle>()
-                .HasMany(e => e.Reservation)
+                .HasMany(e => e.Reservations)
                 .WithRequired(e => e.Vehicle)
                 .WillCascadeOnDelete(false);
         }

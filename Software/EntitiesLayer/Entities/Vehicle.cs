@@ -1,10 +1,9 @@
-namespace EntitiesLayer
+namespace EntitiesLayer.Entities
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+
 
     [Table("Vehicle")]
     public partial class Vehicle
@@ -12,7 +11,7 @@ namespace EntitiesLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vehicle()
         {
-            Reservation = new HashSet<Reservation>();
+            Reservations = new HashSet<Reservation>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -37,6 +36,6 @@ namespace EntitiesLayer
         public bool availability { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservation { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

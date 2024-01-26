@@ -1,10 +1,9 @@
-namespace EntitiesLayer
+namespace EntitiesLayer.Entities
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+
 
     [Table("Employee")]
     public partial class Employee
@@ -12,7 +11,7 @@ namespace EntitiesLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            Support = new HashSet<Support>();
+            Supports = new HashSet<Support>();
         }
 
         public int id { get; set; }
@@ -46,6 +45,6 @@ namespace EntitiesLayer
         public string address { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Support> Support { get; set; }
+        public virtual ICollection<Support> Supports { get; set; }
     }
 }

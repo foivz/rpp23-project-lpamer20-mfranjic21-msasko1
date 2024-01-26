@@ -1,10 +1,9 @@
-namespace EntitiesLayer
+namespace EntitiesLayer.Entities
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+
 
     [Table("Customer")]
     public partial class Customer
@@ -12,8 +11,8 @@ namespace EntitiesLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            Reservation = new HashSet<Reservation>();
-            Support = new HashSet<Support>();
+            Reservations = new HashSet<Reservation>();
+            Supports = new HashSet<Support>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -42,9 +41,9 @@ namespace EntitiesLayer
         public bool blocked { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservation { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Support> Support { get; set; }
+        public virtual ICollection<Support> Supports { get; set; }
     }
 }
