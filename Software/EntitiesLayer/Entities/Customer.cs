@@ -3,6 +3,8 @@ namespace EntitiesLayer.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Reflection.Emit;
+    using System.Runtime.Remoting.Contexts;
 
 
     [Table("Customer")]
@@ -15,7 +17,8 @@ namespace EntitiesLayer.Entities
             Supports = new HashSet<Support>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         [Required]

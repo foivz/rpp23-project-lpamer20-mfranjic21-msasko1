@@ -8,7 +8,7 @@ namespace EntitiesLayer.Entities
     [Table("Reservation")]
     public partial class Reservation
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         public int customerID { get; set; }

@@ -23,9 +23,9 @@ namespace DataAccessLayer.Repositories
         {
             var query = from e in Entities select e;
             return query;
-        } 
+        }
 
-        public int SaveChanges()
+        public virtual int SaveChanges()
         {
             return Context.SaveChanges();
         }
