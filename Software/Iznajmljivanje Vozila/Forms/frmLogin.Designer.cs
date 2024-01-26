@@ -31,75 +31,76 @@ namespace Iznajmljivanje_Vozila
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.btnTurnOnCamera = new System.Windows.Forms.Button();
+            this.btnTakePicture = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtUsername.Location = new System.Drawing.Point(30, 110);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.TabIndex = 0;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(30, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtPassword.Location = new System.Drawing.Point(30, 180);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 1;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(40, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Prijava";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(40, 244);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Prijava";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.Location = new System.Drawing.Point(40, 297);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Obriši";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(40, 297);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 3;
+            this.btnClear.Text = "Obriši";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pbImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(205, 96);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbImage.Location = new System.Drawing.Point(205, 96);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(115, 107);
+            this.pbImage.TabIndex = 4;
+            this.pbImage.TabStop = false;
             // 
-            // button3
+            // btnTurnOnCamera
             // 
-            this.button3.Location = new System.Drawing.Point(225, 232);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 47);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Uključi kameru:";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTurnOnCamera.Location = new System.Drawing.Point(225, 232);
+            this.btnTurnOnCamera.Name = "btnTurnOnCamera";
+            this.btnTurnOnCamera.Size = new System.Drawing.Size(75, 47);
+            this.btnTurnOnCamera.TabIndex = 5;
+            this.btnTurnOnCamera.Text = "Uključi kameru:";
+            this.btnTurnOnCamera.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnTakePicture
             // 
-            this.button4.Location = new System.Drawing.Point(225, 297);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Poslikaj";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTakePicture.Location = new System.Drawing.Point(225, 297);
+            this.btnTakePicture.Name = "btnTakePicture";
+            this.btnTakePicture.Size = new System.Drawing.Size(75, 23);
+            this.btnTakePicture.TabIndex = 6;
+            this.btnTakePicture.Text = "Poslikaj";
+            this.btnTakePicture.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -126,17 +127,17 @@ namespace Iznajmljivanje_Vozila
             this.ClientSize = new System.Drawing.Size(367, 356);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnTakePicture);
+            this.Controls.Add(this.btnTurnOnCamera);
+            this.Controls.Add(this.pbImage);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Name = "FrmLogin";
             this.Text = "Prijava";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,13 +145,13 @@ namespace Iznajmljivanje_Vozila
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Button button2;
-        private PictureBox pictureBox1;
-        private Button button3;
-        private Button button4;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private Button btnLogin;
+        private Button btnClear;
+        private PictureBox pbImage;
+        private Button btnTurnOnCamera;
+        private Button btnTakePicture;
         private Label label1;
         private Label label2;
     }

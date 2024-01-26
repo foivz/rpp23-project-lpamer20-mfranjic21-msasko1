@@ -17,7 +17,7 @@ namespace Iznajmljivanje_Vozila
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmOptions());
+            Application.Run(new FrmLogin());
         }
     }
 }
