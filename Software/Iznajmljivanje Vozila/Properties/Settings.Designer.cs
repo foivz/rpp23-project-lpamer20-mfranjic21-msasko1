@@ -34,5 +34,16 @@ namespace Iznajmljivanje_Vozila.Properties {
                 this["Theme"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=31.147.206.65;Initial Catalog=RPP2324_T13_DB;User ID=RPP2324_T13_User" +
+            ";Password=JnZUVZ]W")]
+        public string RPP2324_T13_DBConnectionString {
+            get {
+                return ((string)(this["RPP2324_T13_DBConnectionString"]));
+            }
+        }
     }
 }

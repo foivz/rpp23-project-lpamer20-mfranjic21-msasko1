@@ -122,6 +122,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPP2324_T13_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPP2324_T13_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\frmAddReservation.resx">
       <DependentUpon>frmAddReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +176,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RPP2324_T13_DBDataSet.xsc">
+      <DependentUpon>RPP2324_T13_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RPP2324_T13_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPP2324_T13_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RPP2324_T13_DBDataSet.xss">
+      <DependentUpon>RPP2324_T13_DBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
