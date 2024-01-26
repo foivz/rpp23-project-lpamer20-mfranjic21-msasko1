@@ -73,6 +73,7 @@ namespace DataAccessLayer
                 .HasMany(e => e.Reservations)
                 .WithRequired(e => e.Vehicle)
                 .WillCascadeOnDelete(false);
+
         }
     }
 }

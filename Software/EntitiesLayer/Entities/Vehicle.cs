@@ -35,6 +35,7 @@ namespace EntitiesLayer.Entities
 
         public bool availability { get; set; }
 
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
     }
