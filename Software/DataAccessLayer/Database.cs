@@ -1,9 +1,10 @@
+using EntitiesLayer;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace EntitiesLayer
+namespace DataAccessLayer
 {
     public partial class Database : DbContext
     {
