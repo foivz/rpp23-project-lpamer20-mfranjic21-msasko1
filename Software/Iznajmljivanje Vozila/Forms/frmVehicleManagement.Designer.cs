@@ -36,9 +36,15 @@
             this.btnNewVehicle = new MaterialSkin.Controls.MaterialButton();
             this.dgvVehicleList = new System.Windows.Forms.DataGridView();
             this.btnDelete = new MaterialSkin.Controls.MaterialButton();
+            this.btnPdf = new MaterialSkin.Controls.MaterialButton();
+            this.fKReservationVehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationTableAdapter = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter();
+            this.vehicleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKReservationVehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // rPP2324_T13_DBDataSet
@@ -72,7 +78,7 @@
             this.btnNewVehicle.Depth = 0;
             this.btnNewVehicle.HighEmphasis = true;
             this.btnNewVehicle.Icon = null;
-            this.btnNewVehicle.Location = new System.Drawing.Point(650, 410);
+            this.btnNewVehicle.Location = new System.Drawing.Point(448, 410);
             this.btnNewVehicle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnNewVehicle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNewVehicle.Name = "btnNewVehicle";
@@ -101,7 +107,7 @@
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(490, 410);
+            this.btnDelete.Location = new System.Drawing.Point(579, 410);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
@@ -114,11 +120,46 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnPdf
+            // 
+            this.btnPdf.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPdf.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnPdf.Depth = 0;
+            this.btnPdf.HighEmphasis = true;
+            this.btnPdf.Icon = null;
+            this.btnPdf.Location = new System.Drawing.Point(709, 410);
+            this.btnPdf.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnPdf.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnPdf.Size = new System.Drawing.Size(64, 36);
+            this.btnPdf.TabIndex = 5;
+            this.btnPdf.Text = "PDF";
+            this.btnPdf.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnPdf.UseAccentColor = false;
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
+            // fKReservationVehicleBindingSource
+            // 
+            this.fKReservationVehicleBindingSource.DataMember = "FK_Reservation_Vehicle";
+            this.fKReservationVehicleBindingSource.DataSource = this.vehicleBindingSource;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
+            // vehicleBindingSource1
+            // 
+            this.vehicleBindingSource1.DataMember = "Vehicle";
+            this.vehicleBindingSource1.DataSource = this.rPP2324_T13_DBDataSet;
+            // 
             // frmVehicleManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 471);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvVehicleList);
             this.Controls.Add(this.btnNewVehicle);
@@ -128,6 +169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKReservationVehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +185,9 @@
         private MaterialSkin.Controls.MaterialButton btnNewVehicle;
         private System.Windows.Forms.DataGridView dgvVehicleList;
         private MaterialSkin.Controls.MaterialButton btnDelete;
+        private MaterialSkin.Controls.MaterialButton btnPdf;
+        private System.Windows.Forms.BindingSource fKReservationVehicleBindingSource;
+        private RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
+        private System.Windows.Forms.BindingSource vehicleBindingSource1;
     }
 }
