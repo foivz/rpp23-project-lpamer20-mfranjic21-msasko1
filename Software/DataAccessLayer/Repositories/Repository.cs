@@ -35,7 +35,7 @@ namespace DataAccessLayer.Repositories
             Entities.Add(entity);
             if (saveChanges)
             {
-                return Context.SaveChanges();
+                return SaveChanges();
             }
             else
             {
