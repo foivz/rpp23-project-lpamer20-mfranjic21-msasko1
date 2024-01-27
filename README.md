@@ -20,7 +20,7 @@ F02 | Upravljanje rezervacijama | Pregled i upravljanje svim rezervacijama, uklj
 F03 | Status vozila | Ispis stanja o pojedinom vozilu, zaprimanje, vraćanje.| Marko Saško
 F04 | Statistička analiza | Statističko praćenje koliko je vozila iznajmljeno od strane kakvih korisnika. | Luka Pamer
 F05 | Upravljanje flotom vozila | Pregled statusa i dostupnosti vozila u floti, planiranje održavanja i osiguranja te praćenje kilometraže i potrošnje goriva. | Luka Pamer
-F06 | Postavke | Mogućnost promjene aplikacijske teme, jezika kako bi se unaprijedilo korisničko iskustvo. | Luka Pamer
+F06 | Postavke | Mogućnost promjene aplikacijske teme kako bi se unaprijedilo korisničko iskustvo. | Luka Pamer
 F07 | Pregled financijskih transakcija | Pristup financijskim informacijama o rezervacijama, plaćanjima i fakturama. Omogućit ćemo administratoru generiranje izvještaja, računa i praćenje prihoda. Dostupan ispis u PDF-u.| Matej Franjić
 F08 | Upravljanje korisnicima | U slučaju da se korisnik ne drži pravila, admin ima mogućnost blokiranja/brisanja korisnika kroz desktop aplikaciju. | Matej Franjić
 F09 | Podrška | Rubrika sa često postavljenim pitanjima u vezi računa i ostalih nejasnoća. | Matej Franjić
