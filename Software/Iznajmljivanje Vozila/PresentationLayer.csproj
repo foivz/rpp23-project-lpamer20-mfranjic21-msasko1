@@ -114,6 +114,12 @@
     <Compile Include="Forms\frmReservation.Designer.cs">
       <DependentUpon>frmReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmReservationRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReservationRecipe.Designer.cs">
+      <DependentUpon>frmReservationRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReservation.resx">
       <DependentUpon>frmReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReservationRecipe.resx">
+      <DependentUpon>frmReservationRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmStatistic.resx">
       <DependentUpon>frmStatistic.cs</DependentUpon>
