@@ -69,8 +69,6 @@ namespace DataAccessLayer.Repositories
 
             return query;
         }
-    public class ReservationRepository
-    {
 
         public void AddReservation(Reservation reservation) {
             using(var context = new Database())

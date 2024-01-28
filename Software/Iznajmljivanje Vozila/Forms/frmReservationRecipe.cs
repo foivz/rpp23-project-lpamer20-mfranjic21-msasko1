@@ -16,7 +16,7 @@ namespace Iznajmljivanje_Vozila.Forms
 {
     public partial class frmReservationRecipe : MaterialForm
     {
-        private ReservationServices services = new ReservationServices();
+        private ReservationService services = new ReservationService();
 
         Reservation reservation;
         public frmReservationRecipe(Reservation selectedReservation)

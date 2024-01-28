@@ -17,7 +17,7 @@ namespace Iznajmljivanje_Vozila.Forms
 {
     public partial class frmTransactionHistory : MaterialForm
     {
-        private ReservationServices services = new ReservationServices();
+        private ReservationService services = new ReservationService();
         public frmTransactionHistory()
         {
             InitializeComponent();

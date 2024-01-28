@@ -10,6 +10,38 @@ namespace BusinessLogicLayer
 {
     public class ReservationService
     {
+        public List<Reservation> GetReservationsByCustomer(int id)
+        {
+            using (var repo = new ReservationRepository())
+            {
+                return repo.GetReservationsByCustomer(id).ToList();
+            }
+        }
+        public List<Reservation> GetReservationByVehicle(int id)
+        {
+            using (var repo = new ReservationRepository())
+            {
+                return repo.GetReservationsByVehicle(id).ToList();
+            }
+        }
+
+        public List<Reservation> GetTransactionsBasedOnCompletion(bool completed)
+        {
+            using (var repo = new ReservationRepository())
+            {
+                return repo.GetTransactionByCompletion(completed).ToList();
+            }
+        }
+
+        public bool CheckIfCompleted(Reservation reservation)
+        {
+            return reservation.returnLocation != null;
+        }
+
+        public void PrintToPdf()
+        {
+
+        }
         public void AddReservation(Reservation reservation)
         {
             var reservationRepository = new ReservationRepository();
