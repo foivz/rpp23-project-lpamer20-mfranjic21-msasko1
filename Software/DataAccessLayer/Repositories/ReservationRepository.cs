@@ -28,6 +28,7 @@ namespace DataAccessLayer.Repositories
 
                 return query.ToList();
             }
+            
         }
 
         public void UpdateReservation(Reservation reservation)
@@ -40,6 +41,21 @@ namespace DataAccessLayer.Repositories
                     context.Reservations.AddOrUpdate(reservation);
                     context.SaveChanges();
                 }
+            }
+        }
+
+        public void DeleteReservation(Reservation reservation)
+        {
+            using (var context = new Database())
+            {         
+                
+                Reservation existingReservation = context.Reservations.Find(reservation.id);
+                if (existingReservation != null)
+                {
+                    context.Reservations.Remove(existingReservation);
+                    context.SaveChanges();
+                }
+                
             }
         }
     }

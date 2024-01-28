@@ -21,7 +21,7 @@ namespace BusinessLogicLayer
             var reservationRepository = new ReservationRepository();
 
             var reservations = reservationRepository.GetReservations();
-
+            
             return reservations;
         }
 
@@ -30,6 +30,13 @@ namespace BusinessLogicLayer
             var reservationRepository = new ReservationRepository();
 
             reservationRepository.UpdateReservation(reservation);
+        }
+
+        public void DeleteReservation(Reservation reservation)
+        {
+            var reservationRepository = new ReservationRepository();
+
+            reservationRepository.DeleteReservation(reservation);
         }
     }
 }

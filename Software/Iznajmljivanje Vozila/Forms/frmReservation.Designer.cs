@@ -82,6 +82,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Obriši";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 

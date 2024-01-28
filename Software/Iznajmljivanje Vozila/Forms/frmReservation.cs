@@ -67,5 +67,19 @@ namespace Iznajmljivanje_Vozila.Forms
                 LoadReservations();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var selectedCell = dgvReservations.SelectedCells[0];
+
+            if (selectedCell != null)
+            {
+                Reservation selectedReservation = (Reservation)dgvReservations.Rows[selectedCell.RowIndex].DataBoundItem;
+
+                var reservationService = new ReservationService();
+                reservationService.DeleteReservation(selectedReservation);
+                LoadReservations();
+            }
+        }
     }
 }
