@@ -72,11 +72,11 @@
     <Compile Include="Forms\fmrAddNewCustomer.Designer.cs">
       <DependentUpon>fmrAddNewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmAddReservation.cs">
+    <Compile Include="Forms\FrmAddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddReservation.Designer.cs">
-      <DependentUpon>frmAddReservation.cs</DependentUpon>
+    <Compile Include="Forms\FrmAddReservation.Designer.cs">
+      <DependentUpon>FrmAddReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCustomerManagement.cs">
       <SubType>Form</SubType>
@@ -108,11 +108,11 @@
     <Compile Include="Forms\frmOptions.Designer.cs">
       <DependentUpon>frmOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmReservation.cs">
+    <Compile Include="Forms\FrmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmReservation.Designer.cs">
-      <DependentUpon>frmReservation.cs</DependentUpon>
+    <Compile Include="Forms\FrmReservation.Designer.cs">
+      <DependentUpon>FrmReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmReservationRecipe.cs">
       <SubType>Form</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="Forms\fmrAddNewCustomer.resx">
       <DependentUpon>fmrAddNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAddReservation.resx">
-      <DependentUpon>frmAddReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmAddReservation.resx">
+      <DependentUpon>FrmAddReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCustomerManagement.resx">
       <DependentUpon>frmCustomerManagement.cs</DependentUpon>
@@ -172,8 +172,8 @@
     <EmbeddedResource Include="Forms\frmOptions.resx">
       <DependentUpon>frmOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmReservation.resx">
-      <DependentUpon>frmReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmReservation.resx">
+      <DependentUpon>FrmReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReservationRecipe.resx">
       <DependentUpon>frmReservationRecipe.cs</DependentUpon>
