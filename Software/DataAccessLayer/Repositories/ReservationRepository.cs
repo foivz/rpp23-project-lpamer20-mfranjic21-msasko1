@@ -1,6 +1,7 @@
 ﻿using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,19 @@ namespace DataAccessLayer.Repositories
                             select r;
 
                 return query.ToList();
+            }
+        }
+
+        public void UpdateReservation(Reservation reservation)
+        {
+            using(var context = new Database())
+            {
+                Reservation existingReservation = context.Reservations.Find(reservation.id);
+                if (existingReservation != null)
+                {
+                    context.Reservations.AddOrUpdate(reservation);
+                    context.SaveChanges();
+                }
             }
         }
     }

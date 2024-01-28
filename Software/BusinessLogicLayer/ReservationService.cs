@@ -24,5 +24,12 @@ namespace BusinessLogicLayer
 
             return reservations;
         }
+
+        public void UpdateReservation(Reservation reservation)
+        {
+            var reservationRepository = new ReservationRepository();
+
+            reservationRepository.UpdateReservation(reservation);
+        }
     }
 }

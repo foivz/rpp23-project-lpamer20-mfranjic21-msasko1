@@ -71,6 +71,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Ažuriraj";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 

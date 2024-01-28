@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using EntitiesLayer.Entities;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -43,13 +44,28 @@ namespace Iznajmljivanje_Vozila.Forms
             var reservations = reservationService.GetReservations();
 
             dgvReservations.DataSource = reservations;
+            dgvReservations.Columns["id"].ReadOnly = true;
             dgvReservations.Columns["Customer"].Visible = false;
             dgvReservations.Columns["Vehicle"].Visible = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var selectedCell = dgvReservations.SelectedCells[0];
+
+            if(selectedCell != null)
+            {
+                Reservation selectedReservation = (Reservation)dgvReservations.Rows[selectedCell.RowIndex].DataBoundItem;
+
+                var reservationService = new ReservationService();
+                reservationService.UpdateReservation(selectedReservation);
+                LoadReservations();
+            }
         }
     }
 }
