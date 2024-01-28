@@ -17,5 +17,16 @@ namespace DataAccessLayer.Repositories
                 context.SaveChanges();
             }
         }
+
+        public List<Reservation> GetReservations()
+        {
+            using(var context = new Database())
+            {
+                var query = from r in context.Reservations
+                            select r;
+
+                return query.ToList();
+            }
+        }
     }
 }

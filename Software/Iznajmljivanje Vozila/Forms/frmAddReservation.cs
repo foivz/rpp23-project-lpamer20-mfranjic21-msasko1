@@ -114,7 +114,9 @@ namespace Iznajmljivanje_Vozila.Forms
             reservationService.AddReservation(newReservation);
             MessageBox.Show("Dodavanje rezervacije uspješno.");
             ClearForm();
-            //TODO reload parent
+
+
+            this.frmReservation.LoadReservations();
 
 
 

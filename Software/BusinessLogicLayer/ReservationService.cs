@@ -16,5 +16,13 @@ namespace BusinessLogicLayer
 
             reservationRepository.AddReservation(reservation);
         }
+
+        public List<Reservation> GetReservations() {
+            var reservationRepository = new ReservationRepository();
+
+            var reservations = reservationRepository.GetReservations();
+
+            return reservations;
+        }
     }
 }

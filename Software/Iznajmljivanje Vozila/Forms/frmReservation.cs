@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using BusinessLogicLayer;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,30 @@ namespace Iznajmljivanje_Vozila.Forms
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
+
+            LoadReservations();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var frmAddReservation = new FrmAddReservation(this);
             frmAddReservation.ShowDialog();
+        }
+
+        public void LoadReservations()
+        {
+            var reservationService = new ReservationService();
+
+            var reservations = reservationService.GetReservations();
+
+            dgvReservations.DataSource = reservations;
+            dgvReservations.Columns["Customer"].Visible = false;
+            dgvReservations.Columns["Vehicle"].Visible = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
