@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmAddReservation
+    partial class FrmAddReservation
     {
         /// <summary>
         /// Required designer variable.
@@ -153,6 +153,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -162,6 +163,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Obriši";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnClose
             // 
@@ -171,8 +173,9 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Zatvori";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmAddReservation
+            // FrmAddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,9 +195,10 @@ namespace Iznajmljivanje_Vozila.Forms
             this.Controls.Add(this.txtPickupDate);
             this.Controls.Add(this.cboVehicle);
             this.Controls.Add(this.txtCustomerId);
-            this.Name = "frmAddReservation";
+            this.Name = "FrmAddReservation";
             this.Padding = new System.Windows.Forms.Padding(3, 55, 3, 3);
             this.Text = "Nova rezervacija";
+            this.Load += new System.EventHandler(this.FrmAddReservation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

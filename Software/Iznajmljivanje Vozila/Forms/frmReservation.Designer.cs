@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmReservation
+    partial class FrmReservation
     {
         /// <summary>
         /// Required designer variable.
@@ -56,6 +56,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -84,7 +85,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnClose.Text = "Zatvori";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // frmReservation
+            // FrmReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,9 +95,10 @@ namespace Iznajmljivanje_Vozila.Forms
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvReservations);
-            this.Name = "frmReservation";
+            this.Name = "FrmReservation";
             this.Padding = new System.Windows.Forms.Padding(3, 55, 3, 3);
             this.Text = "Rezervacije";
+            this.Load += new System.EventHandler(this.FrmReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservations)).EndInit();
             this.ResumeLayout(false);
 

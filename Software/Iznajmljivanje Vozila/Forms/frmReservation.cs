@@ -12,19 +12,25 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmReservation : MaterialForm
+    public partial class FrmReservation : MaterialForm
     {
-        public frmReservation()
+        public FrmReservation()
         {
             InitializeComponent();
         }
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
-        private void frmReservation_Load(object sender, EventArgs e)
+        private void FrmReservation_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.Theme == true)
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frmAddReservation = new FrmAddReservation(this);
+            frmAddReservation.ShowDialog();
         }
     }
 }
