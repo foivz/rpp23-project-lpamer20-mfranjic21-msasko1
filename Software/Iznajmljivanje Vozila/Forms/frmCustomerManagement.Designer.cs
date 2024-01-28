@@ -36,6 +36,7 @@
             this.btnRefresh = new MaterialSkin.Controls.MaterialButton();
             this.cmbGetData = new System.Windows.Forms.ComboBox();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
+            this.lblSortBy = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomers.Location = new System.Drawing.Point(30, 130);
             this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.Size = new System.Drawing.Size(741, 266);
+            this.dgvCustomers.Size = new System.Drawing.Size(740, 260);
             this.dgvCustomers.TabIndex = 0;
             // 
             // btnAddCustomer
@@ -54,7 +55,7 @@
             this.btnAddCustomer.Depth = 0;
             this.btnAddCustomer.HighEmphasis = true;
             this.btnAddCustomer.Icon = null;
-            this.btnAddCustomer.Location = new System.Drawing.Point(569, 405);
+            this.btnAddCustomer.Location = new System.Drawing.Point(569, 399);
             this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddCustomer.Name = "btnAddCustomer";
@@ -74,7 +75,7 @@
             this.btnRemoveCustomer.Depth = 0;
             this.btnRemoveCustomer.HighEmphasis = true;
             this.btnRemoveCustomer.Icon = null;
-            this.btnRemoveCustomer.Location = new System.Drawing.Point(409, 405);
+            this.btnRemoveCustomer.Location = new System.Drawing.Point(409, 399);
             this.btnRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnRemoveCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRemoveCustomer.Name = "btnRemoveCustomer";
@@ -94,7 +95,7 @@
             this.btnBlock.Depth = 0;
             this.btnBlock.HighEmphasis = true;
             this.btnBlock.Icon = null;
-            this.btnBlock.Location = new System.Drawing.Point(233, 405);
+            this.btnBlock.Location = new System.Drawing.Point(233, 399);
             this.btnBlock.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBlock.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBlock.Name = "btnBlock";
@@ -149,13 +150,13 @@
             // 
             // cmbGetData
             // 
+            this.cmbGetData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cmbGetData.DropDownWidth = 121;
             this.cmbGetData.FormattingEnabled = true;
-            this.cmbGetData.Items.AddRange(new object[] {
-            "Blokiran",
-            "Ne blokiran"});
-            this.cmbGetData.Location = new System.Drawing.Point(550, 94);
+            this.cmbGetData.IntegralHeight = false;
+            this.cmbGetData.Location = new System.Drawing.Point(541, 94);
             this.cmbGetData.Name = "cmbGetData";
-            this.cmbGetData.Size = new System.Drawing.Size(121, 21);
+            this.cmbGetData.Size = new System.Drawing.Size(130, 21);
             this.cmbGetData.TabIndex = 6;
             // 
             // cmbSortBy
@@ -164,15 +165,28 @@
             this.cmbSortBy.Items.AddRange(new object[] {
             "Prezimenu",
             "Blokiranosti"});
-            this.cmbSortBy.Location = new System.Drawing.Point(423, 94);
+            this.cmbSortBy.Location = new System.Drawing.Point(414, 94);
             this.cmbSortBy.Name = "cmbSortBy";
             this.cmbSortBy.Size = new System.Drawing.Size(121, 21);
             this.cmbSortBy.TabIndex = 7;
             this.cmbSortBy.SelectedIndexChanged += new System.EventHandler(this.cmbSortBy_SelectedIndexChanged);
             // 
+            // lblSortBy
+            // 
+            this.lblSortBy.AutoSize = true;
+            this.lblSortBy.Depth = 0;
+            this.lblSortBy.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblSortBy.Location = new System.Drawing.Point(303, 95);
+            this.lblSortBy.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSortBy.Name = "lblSortBy";
+            this.lblSortBy.Size = new System.Drawing.Size(105, 19);
+            this.lblSortBy.TabIndex = 8;
+            this.lblSortBy.Text = "Sortiraj prema:";
+            // 
             // frmCustomerManagement
             // 
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.cmbSortBy);
             this.Controls.Add(this.cmbGetData);
             this.Controls.Add(this.btnRefresh);
@@ -200,5 +214,6 @@
         private MaterialSkin.Controls.MaterialButton btnRefresh;
         private System.Windows.Forms.ComboBox cmbGetData;
         private System.Windows.Forms.ComboBox cmbSortBy;
+        private MaterialSkin.Controls.MaterialLabel lblSortBy;
     }
 }

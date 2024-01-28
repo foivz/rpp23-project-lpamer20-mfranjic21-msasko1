@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
@@ -43,9 +44,9 @@ namespace Iznajmljivanje_Vozila.Forms
         }
 
 
-        private void EditDataGridView(List<Customer> allCustomers)
+        private void EditDataGridView(List<Customer> customers)
         {
-            dgvCustomers.DataSource = allCustomers;
+            dgvCustomers.DataSource = customers;
 
             dgvCustomers.Columns["id"].Visible = false;
             dgvCustomers.Columns["Reservations"].Visible = false;
@@ -131,10 +132,15 @@ namespace Iznajmljivanje_Vozila.Forms
             cmbGetData.Enabled = true;
             if (cmbSortBy.Text == "Prezimenu")
             {
-                cmbGetData.DataSource = new List<String> { "" };
+                cmbGetData.DropDownStyle = ComboBoxStyle.Simple;
+                cmbGetData.Items.Clear();
+                cmbGetData.Text = "";
             } else
             {
-                cmbGetData.DataSource = new List<String> { "Blokiran" , "Ne blokiran" };
+                cmbGetData.DropDownStyle = ComboBoxStyle.DropDownList;
+                cmbGetData.Items.Clear();
+                cmbGetData.Items.Add("Blokiran");
+                cmbGetData.Items.Add("Ne blokiran");
             }
         }
     }
