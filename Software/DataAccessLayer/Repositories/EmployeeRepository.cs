@@ -1,4 +1,5 @@
 ﻿using EntitiesLayer;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,7 +16,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var context = new Database())
             {
-                var employee = await (from e in context.Employee
+                var employee = await (from e in context.Employees
                             where e.username == username
                             select e).FirstOrDefaultAsync();
 
