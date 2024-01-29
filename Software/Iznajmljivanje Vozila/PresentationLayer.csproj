@@ -119,11 +119,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FmrAddNewCustomer.cs">
+    <Compile Include="Forms\FrmAddNewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FmrAddNewCustomer.Designer.cs">
-      <DependentUpon>FmrAddNewCustomer.cs</DependentUpon>
+    <Compile Include="Forms\FrmAddNewCustomer.Designer.cs">
+      <DependentUpon>FrmAddNewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmAddReservation.cs">
       <SubType>Form</SubType>
@@ -148,6 +148,12 @@
     </Compile>
     <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmNewVehicle.cs">
       <SubType>Form</SubType>
@@ -204,8 +210,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPP2324_T13_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FmrAddNewCustomer.resx">
-      <DependentUpon>FmrAddNewCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmAddNewCustomer.resx">
+      <DependentUpon>FrmAddNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddReservation.resx">
       <DependentUpon>FrmAddReservation.cs</DependentUpon>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmNewVehicle.resx">
       <DependentUpon>FrmNewVehicle.cs</DependentUpon>

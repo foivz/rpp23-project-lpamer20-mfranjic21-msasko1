@@ -63,7 +63,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            var form = new FmrAddNewCustomer();
+            var form = new FrmAddNewCustomer();
             form.ShowDialog();
 
             ShowAllCustomers();

@@ -6,10 +6,10 @@ using System;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class FmrAddNewCustomer : MaterialForm
+    public partial class FrmAddNewCustomer : MaterialForm
     {
         private CustomerService services = new CustomerService();
-        public FmrAddNewCustomer()
+        public FrmAddNewCustomer()
         {
             InitializeComponent();
         }
