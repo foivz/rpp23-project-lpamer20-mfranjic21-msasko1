@@ -88,7 +88,7 @@ namespace Iznajmljivanje_Vozila
             
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             if(btnLogin.Text == "Prijava")
             {

@@ -71,7 +71,7 @@ namespace Iznajmljivanje_Vozila.Forms
                 dgvReservationHistory.DataSource = reservations;
                 dgvReservationHistory.Columns["Customer"].Visible = false;
                 dgvReservationHistory.Columns["Vehicle"].Visible = false;
-                this.vehicleId = reservations[0].id;
+                this.vehicleId = selectedVehicle.id;
 
             }
             else

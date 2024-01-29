@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using MaterialSkin.Controls;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
@@ -43,9 +44,9 @@ namespace Iznajmljivanje_Vozila.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdd = new MaterialSkin.Controls.MaterialButton();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
+            this.btnClose = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // txtCustomerId
@@ -147,31 +148,61 @@ namespace Iznajmljivanje_Vozila.Forms
             // 
             // btnAdd
             // 
+            this.btnAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAdd.Depth = 0;
+            this.btnAdd.HighEmphasis = true;
+            this.btnAdd.Icon = null;
             this.btnAdd.Location = new System.Drawing.Point(26, 372);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 20);
+            this.btnAdd.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAdd.Size = new System.Drawing.Size(69, 36);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Dodaj";
+            this.btnAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAdd.UseAccentColor = false;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
             this.btnClear.Location = new System.Drawing.Point(119, 372);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(64, 20);
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(67, 36);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Obriši";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnClose
             // 
+            this.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClose.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClose.Depth = 0;
+            this.btnClose.HighEmphasis = true;
+            this.btnClose.Icon = null;
             this.btnClose.Location = new System.Drawing.Point(212, 372);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(64, 20);
+            this.btnClose.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClose.Size = new System.Drawing.Size(82, 36);
             this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Zatvori";
+            this.btnClose.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClose.UseAccentColor = false;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -179,7 +210,7 @@ namespace Iznajmljivanje_Vozila.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 420);
+            this.ClientSize = new System.Drawing.Size(318, 423);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
@@ -218,8 +249,8 @@ namespace Iznajmljivanje_Vozila.Forms
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btnAdd;
-        private Button btnClear;
-        private Button btnClose;
+        private MaterialButton btnAdd;
+        private MaterialButton btnClear;
+        private MaterialButton btnClose;
     }
 }

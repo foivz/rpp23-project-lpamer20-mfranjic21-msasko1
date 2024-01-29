@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using MaterialSkin.Controls;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
@@ -31,28 +32,19 @@ namespace Iznajmljivanje_Vozila.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgvVehicles = new System.Windows.Forms.DataGridView();
             this.cboFilterType = new System.Windows.Forms.ComboBox();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnFilter = new MaterialSkin.Controls.MaterialButton();
+            this.btnShowAll = new MaterialSkin.Controls.MaterialButton();
             this.dgvReservationHistory = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnGetHistory = new System.Windows.Forms.Button();
+            this.btnGetHistory = new MaterialSkin.Controls.MaterialButton();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rPP2324_T13_DBDataSet = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSet();
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vehicleTableAdapter = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSetTableAdapters.VehicleTableAdapter();
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationTableAdapter = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVehicles
@@ -67,28 +59,48 @@ namespace Iznajmljivanje_Vozila.Forms
             // cboFilterType
             // 
             this.cboFilterType.FormattingEnabled = true;
-            this.cboFilterType.Location = new System.Drawing.Point(75, 78);
+            this.cboFilterType.Location = new System.Drawing.Point(75, 87);
             this.cboFilterType.Name = "cboFilterType";
             this.cboFilterType.Size = new System.Drawing.Size(104, 21);
             this.cboFilterType.TabIndex = 1;
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(369, 78);
+            this.btnFilter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnFilter.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnFilter.Depth = 0;
+            this.btnFilter.HighEmphasis = true;
+            this.btnFilter.Icon = null;
+            this.btnFilter.Location = new System.Drawing.Point(378, 78);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnFilter.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(64, 20);
+            this.btnFilter.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnFilter.Size = new System.Drawing.Size(91, 36);
             this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Filtriraj";
+            this.btnFilter.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnFilter.UseAccentColor = false;
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(461, 78);
+            this.btnShowAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnShowAll.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnShowAll.Depth = 0;
+            this.btnShowAll.HighEmphasis = true;
+            this.btnShowAll.Icon = null;
+            this.btnShowAll.Location = new System.Drawing.Point(501, 78);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnShowAll.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(71, 21);
+            this.btnShowAll.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnShowAll.Size = new System.Drawing.Size(106, 36);
             this.btnShowAll.TabIndex = 3;
             this.btnShowAll.Text = "Prikaži sve";
+            this.btnShowAll.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnShowAll.UseAccentColor = false;
             this.btnShowAll.UseVisualStyleBackColor = true;
             this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
@@ -107,7 +119,7 @@ namespace Iznajmljivanje_Vozila.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 81);
+            this.label1.Location = new System.Drawing.Point(16, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 5;
@@ -133,17 +145,27 @@ namespace Iznajmljivanje_Vozila.Forms
             // 
             // btnGetHistory
             // 
-            this.btnGetHistory.Location = new System.Drawing.Point(550, 78);
+            this.btnGetHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGetHistory.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnGetHistory.Depth = 0;
+            this.btnGetHistory.HighEmphasis = true;
+            this.btnGetHistory.Icon = null;
+            this.btnGetHistory.Location = new System.Drawing.Point(640, 78);
+            this.btnGetHistory.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnGetHistory.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGetHistory.Name = "btnGetHistory";
-            this.btnGetHistory.Size = new System.Drawing.Size(75, 21);
+            this.btnGetHistory.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnGetHistory.Size = new System.Drawing.Size(120, 36);
             this.btnGetHistory.TabIndex = 8;
             this.btnGetHistory.Text = "Daj povijest";
+            this.btnGetHistory.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnGetHistory.UseAccentColor = false;
             this.btnGetHistory.UseVisualStyleBackColor = true;
             this.btnGetHistory.Click += new System.EventHandler(this.btnGetHistory_Click);
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(258, 78);
+            this.txtFilter.Location = new System.Drawing.Point(258, 87);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(86, 20);
             this.txtFilter.TabIndex = 9;
@@ -151,34 +173,11 @@ namespace Iznajmljivanje_Vozila.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(220, 81);
+            this.label4.Location = new System.Drawing.Point(220, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Filter:";
-            // 
-            // rPP2324_T13_DBDataSet
-            // 
-            this.rPP2324_T13_DBDataSet.DataSetName = "RPP2324_T13_DBDataSet";
-            this.rPP2324_T13_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.rPP2324_T13_DBDataSet;
-            // 
-            // vehicleTableAdapter
-            // 
-            this.vehicleTableAdapter.ClearBeforeFill = true;
-            // 
-            // reservationBindingSource
-            // 
-            this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.rPP2324_T13_DBDataSet;
-            // 
-            // reservationTableAdapter
-            // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // FrmVehicleStatus
             // 
@@ -202,9 +201,6 @@ namespace Iznajmljivanje_Vozila.Forms
             this.Load += new System.EventHandler(this.FrmVehicleStatus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,19 +210,14 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private DataGridView dgvVehicles;
         private ComboBox cboFilterType;
-        private Button btnFilter;
-        private Button btnShowAll;
+        private MaterialButton btnFilter;
+        private MaterialButton btnShowAll;
         private DataGridView dgvReservationHistory;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button btnGetHistory;
+        private MaterialButton btnGetHistory;
         private TextBox txtFilter;
         private Label label4;
-        private RPP2324_T13_DBDataSet rPP2324_T13_DBDataSet;
-        private BindingSource vehicleBindingSource;
-        private RPP2324_T13_DBDataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
-        private BindingSource reservationBindingSource;
-        private RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
     }
 }
