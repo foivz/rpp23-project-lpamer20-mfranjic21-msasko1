@@ -113,9 +113,9 @@ namespace Iznajmljivanje_Vozila
             {
                 //MessageBox.Show("Uspješna prijava");
                 this.Hide();
-                FrmVehicleStatus frmVehicleStatus = new FrmVehicleStatus();
-                frmVehicleStatus.Closed += (s, args) => this.Close(); 
-                frmVehicleStatus.Show();
+                FrmMain frmMain = new FrmMain();
+                frmMain.Closed += (s, args) => this.Close();
+                frmMain.Show();
                 
             }
             else
@@ -219,9 +219,9 @@ namespace Iznajmljivanje_Vozila
                         if (login)
                         {
                             this.Hide();
-                            FrmVehicleStatus frmVehicleStatus = new FrmVehicleStatus();
-                            frmVehicleStatus.Closed += (s, args) => this.Close();
-                            frmVehicleStatus.Show();
+                            FrmMain frmMain = new FrmMain();
+                            frmMain.Closed += (s, args) => this.Close();
+                            frmMain.Show();
                         }
                         else
                         {
