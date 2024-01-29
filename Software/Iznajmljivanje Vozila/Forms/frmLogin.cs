@@ -219,7 +219,7 @@ namespace Iznajmljivanje_Vozila
                         if (login)
                         {
                             this.Hide();
-                            frmVehicleStatus frmVehicleStatus = new frmVehicleStatus();
+                            FrmVehicleStatus frmVehicleStatus = new FrmVehicleStatus();
                             frmVehicleStatus.Closed += (s, args) => this.Close();
                             frmVehicleStatus.Show();
                         }

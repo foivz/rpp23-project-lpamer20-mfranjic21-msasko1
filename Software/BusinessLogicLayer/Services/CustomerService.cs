@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
-    public class CustomerServices
+    public class CustomerService
     {
         public List<Customer> GetCustomers()
         {
