@@ -1,6 +1,7 @@
 ﻿using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -115,6 +116,65 @@ namespace DataAccessLayer.Repositories
                     context.SaveChanges();
                 }
                 
+            }
+        }
+
+        public List<Reservation> GetFilteredReservations(string filterType, string filterValue, int vehicleId)
+        {
+            using (var context = new Database())
+            {
+                IQueryable<Reservation> query = null;
+                if (filterType == "customerId")
+                {
+                     var queryValue = int.Parse(filterValue);
+                     query = from r in context.Reservations
+                             where r.vehicleID == vehicleId && r.customerID == queryValue
+                                select r;
+                }
+                else if (filterType == "pickupDate")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.pickupDate.ToString().Contains(filterValue)
+                                select r;
+                }
+                else if (filterType == "returnDate")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.returnDate.ToString().Contains(filterValue)
+                                select r;
+                }
+                else if (filterType == "pickupLocation")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.pickupLocation.Contains(filterValue)
+                                select r;
+                }
+                else if (filterType == "returnLocation")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.returnLocation.Contains(filterValue)
+                                select r;
+                }
+                else if (filterType == "totalCost")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.totalCost <= decimal.Parse(filterValue)
+                                select r;
+                }
+                else if (filterType == "creationDate")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.creationDate.ToString().Contains(filterValue)
+                                select r;
+                }
+                else if (filterType == "status")
+                {
+                     query = from r in context.Reservations
+                                where r.vehicleID == vehicleId && r.status == filterValue
+                                select r;
+                }
+
+                return query.ToList();
             }
         }
     }

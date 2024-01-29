@@ -57,8 +57,6 @@ namespace Iznajmljivanje_Vozila.Forms
             // 
             // dgvVehicles
             // 
-            this.dgvVehicles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicles.Location = new System.Drawing.Point(16, 150);
             this.dgvVehicles.Name = "dgvVehicles";
@@ -82,6 +80,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnFilter.TabIndex = 2;
             this.btnFilter.Text = "Filtriraj";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // btnShowAll
             // 
@@ -117,7 +116,7 @@ namespace Iznajmljivanje_Vozila.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 356);
+            this.label2.Location = new System.Drawing.Point(13, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 6;

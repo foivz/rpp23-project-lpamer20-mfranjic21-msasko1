@@ -16,6 +16,7 @@ namespace Iznajmljivanje_Vozila.Forms
 {
     public partial class FrmVehicleStatus : MaterialForm
     {
+        private int vehicleId;
         public FrmVehicleStatus()
         {
             InitializeComponent();
@@ -70,11 +71,13 @@ namespace Iznajmljivanje_Vozila.Forms
                 dgvReservationHistory.DataSource = reservations;
                 dgvReservationHistory.Columns["Customer"].Visible = false;
                 dgvReservationHistory.Columns["Vehicle"].Visible = false;
+                this.vehicleId = reservations[0].id;
 
             }
             else
             {
                 dgvReservationHistory.DataSource = new Reservation();
+                this.vehicleId = -1;
             }
         }
 
@@ -96,6 +99,23 @@ namespace Iznajmljivanje_Vozila.Forms
             cboFilterType.ValueMember = "Value";
 
             cboFilterType.DataSource = filterTypes;
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+
+            var selectedFilterType = cboFilterType.SelectedItem as dynamic;
+            var selectedFilterTypeValue = selectedFilterType.Value;
+            var filterValue = txtFilter.Text;
+            
+            var reservationService = new ReservationService();
+
+            var filteredReservations = reservationService.GetFilteredReservations(selectedFilterTypeValue, filterValue, this.vehicleId );
+
+            dgvReservationHistory.DataSource = filteredReservations;
+            dgvReservationHistory.Columns["Customer"].Visible = false;
+            dgvReservationHistory.Columns["Vehicle"].Visible = false;
+
         }
     }
 }
