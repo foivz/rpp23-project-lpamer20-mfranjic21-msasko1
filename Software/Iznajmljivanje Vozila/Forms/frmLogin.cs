@@ -113,7 +113,7 @@ namespace Iznajmljivanje_Vozila
             {
                 //MessageBox.Show("Uspješna prijava");
                 this.Hide();
-                frmVehicleStatus frmVehicleStatus = new frmVehicleStatus();
+                FrmVehicleStatus frmVehicleStatus = new FrmVehicleStatus();
                 frmVehicleStatus.Closed += (s, args) => this.Close(); 
                 frmVehicleStatus.Show();
                 

@@ -2,6 +2,7 @@
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,15 @@ namespace BusinessLogicLayer
             var reservationRepository = new ReservationRepository();
 
             reservationRepository.DeleteReservation(reservation);
+        }
+
+        public List<Reservation> GetFilteredReservations(string filterType, string filterValue, int vehicleId)
+        {
+            var reservationRepository = new ReservationRepository();
+
+            var filteredReservations = reservationRepository.GetFilteredReservations( filterType,  filterValue,  vehicleId);
+
+            return filteredReservations;
         }
     }
 }

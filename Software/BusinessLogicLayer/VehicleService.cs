@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
-    public class VehicleServices
+    public class VehicleService
     {
         public List<Vehicle> GetVehicles()
         {
