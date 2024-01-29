@@ -78,9 +78,10 @@ namespace Iznajmljivanje_Vozila
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(205, 96);
+            this.pbImage.Location = new System.Drawing.Point(179, 92);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(115, 107);
+            this.pbImage.Size = new System.Drawing.Size(180, 117);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImage.TabIndex = 4;
             this.pbImage.TabStop = false;
             // 
@@ -92,6 +93,7 @@ namespace Iznajmljivanje_Vozila
             this.btnTurnOnCamera.TabIndex = 5;
             this.btnTurnOnCamera.Text = "Uključi kameru:";
             this.btnTurnOnCamera.UseVisualStyleBackColor = true;
+            this.btnTurnOnCamera.Click += new System.EventHandler(this.btnTurnOnCamera_Click);
             // 
             // btnTakePicture
             // 
@@ -124,7 +126,7 @@ namespace Iznajmljivanje_Vozila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 356);
+            this.ClientSize = new System.Drawing.Size(405, 364);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTakePicture);
