@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmVehicleStatus : MaterialForm
+    public partial class FrmVehicleStatus : MaterialForm
     {
-        public frmVehicleStatus()
+        public FrmVehicleStatus()
         {
             InitializeComponent();
         }
