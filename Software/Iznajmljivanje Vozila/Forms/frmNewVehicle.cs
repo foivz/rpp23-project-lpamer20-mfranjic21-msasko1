@@ -39,7 +39,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
             if (vehicle.model != "")
             {
-                var prodServices = new VehicleServices();
+                var prodServices = new VehicleService();
                 prodServices.AddVehicle(vehicle);
                 Close();
             }

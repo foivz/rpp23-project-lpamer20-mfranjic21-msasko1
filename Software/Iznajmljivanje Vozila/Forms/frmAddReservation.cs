@@ -40,7 +40,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void LoadVehicleList()
         {
-            var vehicleService = new VehicleServices();
+            var vehicleService = new VehicleService();
             var vehicles = vehicleService.GetVehicles();
 
             Debug.WriteLine(vehicles.ToString());

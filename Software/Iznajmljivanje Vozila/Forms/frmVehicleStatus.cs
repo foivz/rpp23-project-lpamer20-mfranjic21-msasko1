@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using BusinessLogicLayer;
+using EntitiesLayer.Entities;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -21,13 +23,27 @@ namespace Iznajmljivanje_Vozila.Forms
 
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
 
-        private void frmVehicleStatus_Load(object sender, EventArgs e)
+        private void FrmVehicleStatus_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rPP2324_T13_DBDataSet.Vehicle' table. You can move, or remove it, as needed.
+            this.vehicleTableAdapter.Fill(this.rPP2324_T13_DBDataSet.Vehicle);
 
             if (Properties.Settings.Default.Theme == true)
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
+
+            LoadVehicles();
+        }
+
+        private void LoadVehicles()
+        {
+            var vehicleService = new VehicleService();
+
+            List<Vehicle> vehicles = vehicleService.GetVehicles();
+
+            dgvVehicles.DataSource = vehicles;
+            dgvVehicles.Columns["Reservations"].Visible = false;
         }
     }
 }

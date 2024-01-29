@@ -21,7 +21,7 @@ namespace Iznajmljivanje_Vozila.Forms
     public partial class frmVehicleManagement : MaterialForm
     {
 
-        private VehicleServices services = new VehicleServices();
+        private VehicleService services = new VehicleService();
 
         public frmVehicleManagement()
         {
