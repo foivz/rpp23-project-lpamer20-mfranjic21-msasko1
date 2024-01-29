@@ -33,11 +33,11 @@ namespace Iznajmljivanje_Vozila
         {
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnLogin = new MaterialSkin.Controls.MaterialButton();
+            this.btnClear = new MaterialSkin.Controls.MaterialButton();
             this.pbImage = new System.Windows.Forms.PictureBox();
-            this.btnTurnOnCamera = new System.Windows.Forms.Button();
-            this.btnTakePicture = new System.Windows.Forms.Button();
+            this.btnTurnOnCamera = new MaterialSkin.Controls.MaterialButton();
+            this.btnTakePicture = new MaterialSkin.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
@@ -59,48 +59,92 @@ namespace Iznajmljivanje_Vozila
             // 
             // btnLogin
             // 
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.HighEmphasis = true;
+            this.btnLogin.Icon = null;
             this.btnLogin.Location = new System.Drawing.Point(40, 244);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLogin.Size = new System.Drawing.Size(81, 36);
+            this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Prijava";
+            this.btnLogin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLogin.UseAccentColor = false;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnClear
             // 
+            this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnClear.Depth = 0;
+            this.btnClear.HighEmphasis = true;
+            this.btnClear.Icon = null;
             this.btnClear.Location = new System.Drawing.Point(40, 297);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnClear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnClear.Size = new System.Drawing.Size(67, 36);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Obriši";
+            this.btnClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnClear.UseAccentColor = false;
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(205, 96);
+            this.pbImage.Location = new System.Drawing.Point(179, 92);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(115, 107);
+            this.pbImage.Size = new System.Drawing.Size(180, 117);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImage.TabIndex = 4;
             this.pbImage.TabStop = false;
             // 
             // btnTurnOnCamera
             // 
-            this.btnTurnOnCamera.Location = new System.Drawing.Point(225, 232);
+            this.btnTurnOnCamera.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnTurnOnCamera.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnTurnOnCamera.Depth = 0;
+            this.btnTurnOnCamera.HighEmphasis = true;
+            this.btnTurnOnCamera.Icon = null;
+            this.btnTurnOnCamera.Location = new System.Drawing.Point(194, 244);
+            this.btnTurnOnCamera.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTurnOnCamera.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTurnOnCamera.Name = "btnTurnOnCamera";
-            this.btnTurnOnCamera.Size = new System.Drawing.Size(75, 47);
+            this.btnTurnOnCamera.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnTurnOnCamera.Size = new System.Drawing.Size(146, 36);
             this.btnTurnOnCamera.TabIndex = 5;
             this.btnTurnOnCamera.Text = "Uključi kameru:";
+            this.btnTurnOnCamera.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnTurnOnCamera.UseAccentColor = false;
             this.btnTurnOnCamera.UseVisualStyleBackColor = true;
+            this.btnTurnOnCamera.Click += new System.EventHandler(this.btnTurnOnCamera_Click);
             // 
             // btnTakePicture
             // 
-            this.btnTakePicture.Location = new System.Drawing.Point(225, 297);
+            this.btnTakePicture.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnTakePicture.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnTakePicture.Depth = 0;
+            this.btnTakePicture.HighEmphasis = true;
+            this.btnTakePicture.Icon = null;
+            this.btnTakePicture.Location = new System.Drawing.Point(223, 297);
+            this.btnTakePicture.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTakePicture.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTakePicture.Name = "btnTakePicture";
-            this.btnTakePicture.Size = new System.Drawing.Size(75, 23);
+            this.btnTakePicture.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnTakePicture.Size = new System.Drawing.Size(89, 36);
             this.btnTakePicture.TabIndex = 6;
             this.btnTakePicture.Text = "Poslikaj";
+            this.btnTakePicture.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnTakePicture.UseAccentColor = false;
             this.btnTakePicture.UseVisualStyleBackColor = true;
+            this.btnTakePicture.Click += new System.EventHandler(this.btnTakePicture_Click);
             // 
             // label1
             // 
@@ -124,7 +168,7 @@ namespace Iznajmljivanje_Vozila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 356);
+            this.ClientSize = new System.Drawing.Size(405, 364);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTakePicture);
@@ -147,13 +191,13 @@ namespace Iznajmljivanje_Vozila
 
         private TextBox txtUsername;
         private TextBox txtPassword;
-        private Button btnLogin;
-        private Button btnClear;
+        private MaterialSkin.Controls.MaterialButton btnLogin;
         private PictureBox pbImage;
-        private Button btnTurnOnCamera;
-        private Button btnTakePicture;
         private Label label1;
         private Label label2;
+        private MaterialSkin.Controls.MaterialButton btnClear;
+        private MaterialSkin.Controls.MaterialButton btnTurnOnCamera;
+        private MaterialSkin.Controls.MaterialButton btnTakePicture;
     }
 }
 
