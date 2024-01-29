@@ -103,6 +103,7 @@ namespace Iznajmljivanje_Vozila
             this.btnTakePicture.TabIndex = 6;
             this.btnTakePicture.Text = "Poslikaj";
             this.btnTakePicture.UseVisualStyleBackColor = true;
+            this.btnTakePicture.Click += new System.EventHandler(this.btnTakePicture_Click);
             // 
             // label1
             // 
