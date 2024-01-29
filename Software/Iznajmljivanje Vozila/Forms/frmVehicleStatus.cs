@@ -25,17 +25,13 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void FrmVehicleStatus_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'rPP2324_T13_DBDataSet.Reservation' table. You can move, or remove it, as needed.
-            this.reservationTableAdapter.Fill(this.rPP2324_T13_DBDataSet.Reservation);
-            // TODO: This line of code loads data into the 'rPP2324_T13_DBDataSet.Vehicle' table. You can move, or remove it, as needed.
-            this.vehicleTableAdapter.Fill(this.rPP2324_T13_DBDataSet.Vehicle);
-
             if (Properties.Settings.Default.Theme == true)
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
 
             LoadVehicles();
+            LoadFilterTypes();
         }
 
         private void LoadVehicles()
@@ -49,6 +45,17 @@ namespace Iznajmljivanje_Vozila.Forms
         }
 
         private void btnGetHistory_Click(object sender, EventArgs e)
+        {
+            LoadVehicleHistory();
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            LoadVehicleHistory();
+            txtFilter.Text = string.Empty;
+        }
+
+        private void LoadVehicleHistory()
         {
             var selectedCell = dgvVehicles.SelectedCells[0];
 
@@ -65,11 +72,30 @@ namespace Iznajmljivanje_Vozila.Forms
                 dgvReservationHistory.Columns["Vehicle"].Visible = false;
 
             }
+            else
+            {
+                dgvReservationHistory.DataSource = new Reservation();
+            }
         }
 
-        private void btnShowAll_Click(object sender, EventArgs e)
+        private void LoadFilterTypes()
         {
-            
+            var filterTypes = new List<object>
+            {
+                new { DisplayText = "ID korisnika", Value = "customerId" },
+                new { DisplayText = "Datum preuzimanja", Value = "pickupDate" },
+                new { DisplayText = "Datum vraćanja", Value = "returnDate" },
+                new { DisplayText = "Lokacija preuzimanja", Value = "pickupLocation" },
+                new { DisplayText = "Lokacija vraćanja", Value = "returnLocation" },
+                new { DisplayText = "Ukupan iznos do", Value = "totalCost" },
+                new { DisplayText = "Datum kreiranja", Value = "creationDate" },
+                new { DisplayText = "Status", Value = "status" },
+            };
+
+            cboFilterType.DisplayMember = "DisplayText";
+            cboFilterType.ValueMember = "Value";
+
+            cboFilterType.DataSource = filterTypes;
         }
     }
 }
