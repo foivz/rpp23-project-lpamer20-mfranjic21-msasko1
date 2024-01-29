@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmOptions : MaterialForm
+    public partial class FrmOptions : MaterialForm
     {
-        public frmOptions()
+        public FrmOptions()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -68,7 +68,7 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             this.Hide();
 
-            frmVehicleManagement forma = new frmVehicleManagement();
+            FrmVehicleManagement forma = new FrmVehicleManagement();
             
             forma.ShowDialog();
             

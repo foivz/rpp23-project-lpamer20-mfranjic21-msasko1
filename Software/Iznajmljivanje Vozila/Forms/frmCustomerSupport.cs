@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmCustomerSupport : MaterialForm
+    public partial class FrmCustomerSupport : MaterialForm
     {
-        public frmCustomerSupport()
+        public FrmCustomerSupport()
         {
             InitializeComponent();
         }

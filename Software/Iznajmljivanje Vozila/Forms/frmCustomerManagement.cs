@@ -15,11 +15,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmCustomerManagement : MaterialForm
+    public partial class FrmCustomerManagement : MaterialForm
     {
-        private CustomerServices services = new CustomerServices();
+        private CustomerService services = new CustomerService();
 
-        public frmCustomerManagement()
+        public FrmCustomerManagement()
         {
             InitializeComponent();
         }
@@ -63,7 +63,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            var form = new fmrAddNewCustomer();
+            var form = new FmrAddNewCustomer();
             form.ShowDialog();
 
             ShowAllCustomers();
@@ -73,7 +73,7 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             Customer customer = dgvCustomers.CurrentRow.DataBoundItem as Customer;
 
-            var services = new CustomerServices();
+            var services = new CustomerService();
             services.RemoveCustomer(customer);
 
             ShowAllCustomers();
@@ -83,7 +83,7 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             Customer customer = dgvCustomers.CurrentRow.DataBoundItem as Customer;
 
-            var services = new CustomerServices();
+            var services = new CustomerService();
             services.BlockCustomer(customer);
 
             ShowAllCustomers();

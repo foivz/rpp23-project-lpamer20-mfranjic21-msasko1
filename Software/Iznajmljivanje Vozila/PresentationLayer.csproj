@@ -119,11 +119,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\fmrAddNewCustomer.cs">
+    <Compile Include="Forms\FmrAddNewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\fmrAddNewCustomer.Designer.cs">
-      <DependentUpon>fmrAddNewCustomer.cs</DependentUpon>
+    <Compile Include="Forms\FmrAddNewCustomer.Designer.cs">
+      <DependentUpon>FmrAddNewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmAddReservation.cs">
       <SubType>Form</SubType>
@@ -131,17 +131,17 @@
     <Compile Include="Forms\FrmAddReservation.Designer.cs">
       <DependentUpon>FrmAddReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCustomerManagement.cs">
+    <Compile Include="Forms\FrmCustomerManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCustomerManagement.Designer.cs">
-      <DependentUpon>frmCustomerManagement.cs</DependentUpon>
+    <Compile Include="Forms\FrmCustomerManagement.Designer.cs">
+      <DependentUpon>FrmCustomerManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCustomerSupport.cs">
+    <Compile Include="Forms\FrmCustomerSupport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCustomerSupport.Designer.cs">
-      <DependentUpon>frmCustomerSupport.cs</DependentUpon>
+    <Compile Include="Forms\FrmCustomerSupport.Designer.cs">
+      <DependentUpon>FrmCustomerSupport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -149,17 +149,17 @@
     <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNewVehicle.cs">
+    <Compile Include="Forms\FrmNewVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNewVehicle.Designer.cs">
-      <DependentUpon>frmNewVehicle.cs</DependentUpon>
+    <Compile Include="Forms\FrmNewVehicle.Designer.cs">
+      <DependentUpon>FrmNewVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmOptions.cs">
+    <Compile Include="Forms\FrmOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmOptions.Designer.cs">
-      <DependentUpon>frmOptions.cs</DependentUpon>
+    <Compile Include="Forms\FrmOptions.Designer.cs">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmReservation.cs">
       <SubType>Form</SubType>
@@ -167,29 +167,29 @@
     <Compile Include="Forms\FrmReservation.Designer.cs">
       <DependentUpon>FrmReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmReservationRecipe.cs">
+    <Compile Include="Forms\FrmReservationRecipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmReservationRecipe.Designer.cs">
-      <DependentUpon>frmReservationRecipe.cs</DependentUpon>
+    <Compile Include="Forms\FrmReservationRecipe.Designer.cs">
+      <DependentUpon>FrmReservationRecipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmStatistic.cs">
+    <Compile Include="Forms\FrmStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmStatistic.Designer.cs">
-      <DependentUpon>frmStatistic.cs</DependentUpon>
+    <Compile Include="Forms\FrmStatistic.Designer.cs">
+      <DependentUpon>FrmStatistic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTransactionHistory.cs">
+    <Compile Include="Forms\FrmTransactionHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmTransactionHistory.Designer.cs">
-      <DependentUpon>frmTransactionHistory.cs</DependentUpon>
+    <Compile Include="Forms\FrmTransactionHistory.Designer.cs">
+      <DependentUpon>FrmTransactionHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmVehicleManagement.cs">
+    <Compile Include="Forms\FrmVehicleManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmVehicleManagement.Designer.cs">
-      <DependentUpon>frmVehicleManagement.cs</DependentUpon>
+    <Compile Include="Forms\FrmVehicleManagement.Designer.cs">
+      <DependentUpon>FrmVehicleManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmVehicleStatus.cs">
       <SubType>Form</SubType>
@@ -204,41 +204,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RPP2324_T13_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\fmrAddNewCustomer.resx">
-      <DependentUpon>fmrAddNewCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FmrAddNewCustomer.resx">
+      <DependentUpon>FmrAddNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddReservation.resx">
       <DependentUpon>FrmAddReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCustomerManagement.resx">
-      <DependentUpon>frmCustomerManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCustomerManagement.resx">
+      <DependentUpon>FrmCustomerManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCustomerSupport.resx">
-      <DependentUpon>frmCustomerSupport.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCustomerSupport.resx">
+      <DependentUpon>FrmCustomerSupport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNewVehicle.resx">
-      <DependentUpon>frmNewVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmNewVehicle.resx">
+      <DependentUpon>FrmNewVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmOptions.resx">
-      <DependentUpon>frmOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmOptions.resx">
+      <DependentUpon>FrmOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmReservation.resx">
       <DependentUpon>FrmReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmReservationRecipe.resx">
-      <DependentUpon>frmReservationRecipe.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmReservationRecipe.resx">
+      <DependentUpon>FrmReservationRecipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmStatistic.resx">
-      <DependentUpon>frmStatistic.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmStatistic.resx">
+      <DependentUpon>FrmStatistic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTransactionHistory.resx">
-      <DependentUpon>frmTransactionHistory.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmTransactionHistory.resx">
+      <DependentUpon>FrmTransactionHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmVehicleManagement.resx">
-      <DependentUpon>frmVehicleManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmVehicleManagement.resx">
+      <DependentUpon>FrmVehicleManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmVehicleStatus.resx">
       <DependentUpon>FrmVehicleStatus.cs</DependentUpon>

@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmTransactionHistory : MaterialForm
+    public partial class FrmTransactionHistory : MaterialForm
     {
         private ReservationService services = new ReservationService();
-        public frmTransactionHistory()
+        public FrmTransactionHistory()
         {
             InitializeComponent();
         }
@@ -109,7 +109,7 @@ namespace Iznajmljivanje_Vozila.Forms
             try
             {
                 Reservation reservation = dgvTransactionHistory.CurrentRow.DataBoundItem as Reservation;
-                var form = new frmReservationRecipe(reservation);
+                var form = new FrmReservationRecipe(reservation);
                 form.ShowDialog();
             } catch
             {

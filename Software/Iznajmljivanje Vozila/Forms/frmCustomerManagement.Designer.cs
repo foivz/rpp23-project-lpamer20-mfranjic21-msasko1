@@ -1,6 +1,6 @@
 ﻿namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmCustomerManagement
+    partial class FrmCustomerManagement
     {
         /// <summary>
         /// Required designer variable.

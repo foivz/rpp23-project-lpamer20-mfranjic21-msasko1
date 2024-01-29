@@ -18,12 +18,12 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmVehicleManagement : MaterialForm
+    public partial class FrmVehicleManagement : MaterialForm
     {
 
         private VehicleService services = new VehicleService();
 
-        public frmVehicleManagement()
+        public FrmVehicleManagement()
         {
             InitializeComponent();
         }
@@ -67,7 +67,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            frmNewVehicle forma = new frmNewVehicle();
+            FrmNewVehicle forma = new FrmNewVehicle();
             forma.ShowDialog();
             ShowAllVehicles();
         }

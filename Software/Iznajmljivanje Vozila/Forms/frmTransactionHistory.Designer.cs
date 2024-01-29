@@ -1,6 +1,6 @@
 ﻿namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmTransactionHistory
+    partial class FrmTransactionHistory
     {
         /// <summary>
         /// Required designer variable.

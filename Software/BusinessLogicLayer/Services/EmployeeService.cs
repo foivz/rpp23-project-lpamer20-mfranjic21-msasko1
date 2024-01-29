@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Repositories;
 using EntitiesLayer;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

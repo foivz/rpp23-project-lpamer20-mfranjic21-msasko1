@@ -14,12 +14,12 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmReservationRecipe : MaterialForm
+    public partial class FrmReservationRecipe : MaterialForm
     {
         private ReservationService services = new ReservationService();
 
         Reservation reservation;
-        public frmReservationRecipe(Reservation selectedReservation)
+        public FrmReservationRecipe(Reservation selectedReservation)
         {
             reservation = selectedReservation;
             InitializeComponent();

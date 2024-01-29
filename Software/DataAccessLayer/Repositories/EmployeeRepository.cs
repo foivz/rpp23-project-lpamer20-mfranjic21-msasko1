@@ -17,7 +17,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var context = new Database())
             {
-                var employee = (from e in context.Employee
+                var employee = (from e in context.Employees
                             where e.username == username
                             select e).FirstOrDefault();
 
@@ -28,12 +28,12 @@ namespace DataAccessLayer.Repositories
         {
             using (var context = new Database())
             {
-                var existingEmployee = (from e in context.Employee
+                var existingEmployee = (from e in context.Employees
                                         where e.username == username
                                         select e).FirstOrDefault();
 
                 existingEmployee.image = image;
-                context.Employee.AddOrUpdate(existingEmployee);
+                context.Employees.AddOrUpdate(existingEmployee);
                 context.SaveChanges();
             }
         }

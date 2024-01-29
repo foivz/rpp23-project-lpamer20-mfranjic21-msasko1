@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class frmNewVehicle : MaterialForm
+    public partial class FrmNewVehicle : MaterialForm
     {
-        public frmNewVehicle()
+        public FrmNewVehicle()
         {
             InitializeComponent();
         }

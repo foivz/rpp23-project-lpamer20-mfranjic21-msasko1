@@ -6,10 +6,10 @@ using System;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class fmrAddNewCustomer : MaterialForm
+    public partial class FmrAddNewCustomer : MaterialForm
     {
-        private CustomerServices services = new CustomerServices();
-        public fmrAddNewCustomer()
+        private CustomerService services = new CustomerService();
+        public FmrAddNewCustomer()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace Iznajmljivanje_Vozila.Forms
                 adress = txtAdress.Text
             };
 
-            var services = new CustomerServices();
+            var services = new CustomerService();
             services.AddCustomer(customer);
             Close();
         }

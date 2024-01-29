@@ -1,6 +1,6 @@
 ﻿namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmStatistic
+    partial class FrmStatistic
     {
         /// <summary>
         /// Required designer variable.

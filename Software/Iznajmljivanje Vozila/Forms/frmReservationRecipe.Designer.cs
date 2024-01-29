@@ -1,6 +1,6 @@
 ﻿namespace Iznajmljivanje_Vozila.Forms
 {
-    partial class frmReservationRecipe
+    partial class FrmReservationRecipe
     {
         /// <summary>
         /// Required designer variable.
