@@ -46,17 +46,19 @@ namespace Iznajmljivanje_Vozila.Forms
             this.rPP2324_T13_DBDataSet = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSet();
             this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTableAdapter = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSetTableAdapters.VehicleTableAdapter();
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationTableAdapter = new Iznajmljivanje_Vozila.RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVehicles
             // 
-            this.dgvVehicles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVehicles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicles.Location = new System.Drawing.Point(16, 150);
             this.dgvVehicles.Name = "dgvVehicles";
@@ -89,6 +91,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnShowAll.TabIndex = 3;
             this.btnShowAll.Text = "Prikaži sve";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // dgvReservationHistory
             // 
@@ -99,7 +102,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.dgvReservationHistory.Location = new System.Drawing.Point(16, 371);
             this.dgvReservationHistory.Name = "dgvReservationHistory";
             this.dgvReservationHistory.RowTemplate.Height = 25;
-            this.dgvReservationHistory.Size = new System.Drawing.Size(744, 140);
+            this.dgvReservationHistory.Size = new System.Drawing.Size(1044, 140);
             this.dgvReservationHistory.TabIndex = 4;
             // 
             // label1
@@ -137,6 +140,7 @@ namespace Iznajmljivanje_Vozila.Forms
             this.btnGetHistory.TabIndex = 8;
             this.btnGetHistory.Text = "Daj povijest";
             this.btnGetHistory.UseVisualStyleBackColor = true;
+            this.btnGetHistory.Click += new System.EventHandler(this.btnGetHistory_Click);
             // 
             // txtFilter
             // 
@@ -168,11 +172,20 @@ namespace Iznajmljivanje_Vozila.Forms
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
             // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataMember = "Reservation";
+            this.reservationBindingSource.DataSource = this.rPP2324_T13_DBDataSet;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmVehicleStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 539);
+            this.ClientSize = new System.Drawing.Size(1083, 539);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnGetHistory);
@@ -192,6 +205,7 @@ namespace Iznajmljivanje_Vozila.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservationHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rPP2324_T13_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +227,7 @@ namespace Iznajmljivanje_Vozila.Forms
         private RPP2324_T13_DBDataSet rPP2324_T13_DBDataSet;
         private BindingSource vehicleBindingSource;
         private RPP2324_T13_DBDataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
+        private BindingSource reservationBindingSource;
+        private RPP2324_T13_DBDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
     }
 }
