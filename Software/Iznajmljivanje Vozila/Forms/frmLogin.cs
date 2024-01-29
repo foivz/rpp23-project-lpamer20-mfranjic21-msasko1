@@ -243,5 +243,11 @@ namespace Iznajmljivanje_Vozila
                 return ms.ToArray();
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+        }
     }
 }
