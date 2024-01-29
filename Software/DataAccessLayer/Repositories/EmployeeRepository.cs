@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,30 @@ namespace DataAccessLayer.Repositories
 {
     public class EmployeeRepository
     {
-        public async Task<Employee> GetEmployee(string username)
+        public Employee GetEmployee(string username)
         {
             using (var context = new Database())
             {
-                var employee = await (from e in context.Employee
+                var employee = (from e in context.Employee
                             where e.username == username
-                            select e).FirstOrDefaultAsync();
+                            select e).FirstOrDefault();
 
                 return employee;
             }
         }
+        public void AddImage(string username, byte[] image)
+        {
+            using (var context = new Database())
+            {
+                var existingEmployee = (from e in context.Employee
+                                        where e.username == username
+                                        select e).FirstOrDefault();
+
+                existingEmployee.image = image;
+                context.Employee.AddOrUpdate(existingEmployee);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

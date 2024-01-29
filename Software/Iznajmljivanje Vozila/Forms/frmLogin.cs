@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Iznajmljivanje_Vozila
 {
@@ -89,17 +90,24 @@ namespace Iznajmljivanje_Vozila
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            await PerformLogin();
+            if(btnLogin.Text == "Prijava")
+            {
+                PerformLoginUsernamePassword();
+            }else if(btnLogin.Text == "Prijava s FR")
+            {
+                PerformLoginFaceRecognition();
+            }
+            
         }
 
-        private async Task PerformLogin()
+        private void PerformLoginUsernamePassword()
         {
             var username = txtUsername.Text;
             var password = txtPassword.Text;
 
             var loginService = new LoginService();
 
-            var login = await loginService.LoginUsernamePassword(username, password);
+            var login = loginService.LoginUsernamePassword(username, password);
 
             if (login)
             {
@@ -118,7 +126,21 @@ namespace Iznajmljivanje_Vozila
 
         private void btnTurnOnCamera_Click(object sender, EventArgs e)
         {
-            InitializeWebcam();
+            if (videoSource == null || !videoSource.IsRunning)
+            {
+                InitializeWebcam();
+                btnTurnOnCamera.Text = "Isključi kameru:";
+                btnLogin.Text = "Prijava s FR";
+            }
+            else
+            {
+                
+                videoSource.Stop();
+                pbImage.Image = null;
+                btnTurnOnCamera.Text = "Uključi kameru:";
+                btnLogin.Text = "Prijava";
+            }
+            
         }
 
         private void btnTakePicture_Click(object sender, EventArgs e)
@@ -131,6 +153,94 @@ namespace Iznajmljivanje_Vozila
                 pbImage.Image = (System.Drawing.Image)pbImage.Image.Clone();
 
                 videoSource.Stop();
+            }
+        }
+
+        private void PerformLoginFaceRecognition()
+        {
+            var username = txtUsername.Text;
+            var password = txtPassword.Text;
+            var image = pbImage.Image;
+            byte[] imageBytes;
+
+            if(image != null)
+            {
+                imageBytes = ImageToByteArray(image);
+            }
+            else
+            {
+                MessageBox.Show("Slika ne postoji!");
+                return;
+            }
+
+            if(username != string.Empty)
+            {
+                var employeeService = new EmployeeService();
+                var employee = employeeService.GetEmployee(username);
+
+                if(employee != null)
+                {
+                    var loginService = new LoginService();
+
+                    if (employee.image == null) {
+                        DialogResult result = MessageBox.Show("Želite li dodati sliku u bazu?", "Odabir:", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if(password == string.Empty)
+                            {
+                                MessageBox.Show("Unesite lozinku i probajte ponovno.");
+                                return;
+                            }
+                            else
+                            {
+                                
+                                var addedToDatabase = loginService.AddImageToDatabase(username, password, imageBytes);
+
+                                if (addedToDatabase)
+                                {
+                                    MessageBox.Show("Slika uspješno dodana u bazu. Probajte se prijaviti.");
+                                    return;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Slika neuspješno dodana u bazu. Pokušajte ponovno kasnije.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        var login = loginService.LoginFaceRecognition(username, imageBytes);
+                        if (login)
+                        {
+                            this.Hide();
+                            frmVehicleStatus frmVehicleStatus = new frmVehicleStatus();
+                            frmVehicleStatus.Closed += (s, args) => this.Close();
+                            frmVehicleStatus.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nespješna prijava");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unesite korisničko ime.");
+            }
+        }
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
             }
         }
     }
