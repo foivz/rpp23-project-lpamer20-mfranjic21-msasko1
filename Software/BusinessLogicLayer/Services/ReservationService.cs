@@ -11,18 +11,18 @@ namespace BusinessLogicLayer
 {
     public class ReservationService
     {
-        public List<Reservation> GetReservationsByCustomer(int id)
-        {
-            using (var repo = new ReservationRepository())
-            {
-                return repo.GetReservationsByCustomer(id).ToList();
-            }
-        }
         public List<Reservation> GetReservationByVehicle(int id)
         {
             using (var repo = new ReservationRepository())
             {
                 return repo.GetReservationsByVehicle(id).ToList();
+            }
+        }
+        public List<Reservation> GetReservationByCustomer(int id)
+        {
+            using (var repo = new ReservationRepository())
+            {
+                return repo.GetReservationsByCustomer(id).ToList();
             }
         }
 
@@ -43,11 +43,24 @@ namespace BusinessLogicLayer
         {
 
         }
+
         public void AddReservation(Reservation reservation)
         {
             var reservationRepository = new ReservationRepository();
 
             reservationRepository.AddReservation(reservation);
+        }
+
+        public bool AddNewReservation(Reservation reservation)
+        {
+            bool isSuccessful = false;
+            using (var repo = new ReservationRepository())
+            {
+                int affectedRows = repo.Add(reservation);
+                isSuccessful = affectedRows > 0;
+            }
+            return isSuccessful;
+
         }
 
         public List<Reservation> GetReservations() {
@@ -71,6 +84,29 @@ namespace BusinessLogicLayer
 
             reservationRepository.DeleteReservation(reservation);
         }
+        public bool RemoveReservation(Reservation reservation)
+        {
+            bool isSuccessful = false;
+            using (var repo = new ReservationRepository())
+            {
+                int affectedRows = repo.Remove(reservation);
+                isSuccessful = affectedRows > 0;
+            }
+            return isSuccessful;
+        }
+
+        public List<Reservation> ReplaceIDs(List<Reservation> listOfReservations)
+        {
+            List<Reservation> idReplacedList = new List<Reservation>();
+
+            foreach (var reservation in listOfReservations)
+            {
+                reservation.Customer = new CustomerRepository().GetCustomerById(reservation.customerID).ToList<Customer>()[0];
+                reservation.Vehicle = new VehicleRepository().GetVehicleById(reservation.vehicleID).ToList<Vehicle>()[0];
+                idReplacedList.Add(reservation);
+            }
+            return listOfReservations;
+        }
 
         public List<Reservation> GetFilteredReservations(string filterType, string filterValue, int vehicleId)
         {
@@ -79,6 +115,16 @@ namespace BusinessLogicLayer
             var filteredReservations = reservationRepository.GetFilteredReservations( filterType,  filterValue,  vehicleId);
 
             return filteredReservations;
+        }
+
+
+
+        public List<Reservation> GetAllReservations()
+        {
+            using (var repo = new ReservationRepository())
+            {
+                return repo.GetAll().ToList();
+            }
         }
     }
 }

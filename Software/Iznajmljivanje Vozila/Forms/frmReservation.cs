@@ -33,7 +33,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frmAddReservation = new FrmAddReservation(this);
+            var frmAddReservation = new FrmAddReservation();
             frmAddReservation.ShowDialog();
         }
 

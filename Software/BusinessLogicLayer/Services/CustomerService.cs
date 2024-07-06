@@ -18,6 +18,14 @@ namespace BusinessLogicLayer
             }
         }
 
+        public List<String> GetCustomersFullName()
+        {
+            using (var repo = new CustomerRepository())
+            {
+                return repo.GetAllNames().ToList();
+            }
+        }
+
         public bool AddCustomer(Customer customer)
         {
             bool isSuccessful = false;
@@ -33,6 +41,14 @@ namespace BusinessLogicLayer
         public bool RemoveCustomer(Customer customer)
         {
             bool isSuccessful = false;
+
+            var support = new SupportServices().GetUsersQuestions(customer);
+
+            if (support.Count != 0)
+            {
+                throw new CustomerSupportException("Korisnik ima pitanja za korisničku podršku.");
+            }
+
             using (var repo = new CustomerRepository())
             {
                 int affectedRows = repo.Remove(customer);
@@ -67,6 +83,14 @@ namespace BusinessLogicLayer
 
             return isSuccessful;
         }
+        public Customer GetCustomerByName(string text)
+        {
+            using (var repo = new CustomerRepository())
+            {
+                return repo.GetCustometByFullName(text);
+            }
+        }
+
 
         public List<Customer> GetBlocked(bool blocked)
         {

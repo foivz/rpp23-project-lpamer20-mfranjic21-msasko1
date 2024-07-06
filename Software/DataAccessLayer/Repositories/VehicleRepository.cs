@@ -49,5 +49,14 @@ namespace DataAccessLayer.Repositories
             if(saveChanges) { return SaveChanges(); } else return 0;
         }
 
+        public IQueryable<Vehicle> GetVehicleById(int idVehicle)
+        {
+            var query = from c in Entities
+                        where c.id == idVehicle
+                        select c;
+
+            return query;
+        }
+
     }
 }

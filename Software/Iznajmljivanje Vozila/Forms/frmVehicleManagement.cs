@@ -1,7 +1,6 @@
 ﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -93,71 +92,31 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
-            if(dgvVehicleList.Rows.Count > 0)
+            int columnCount = dgvVehicleList.ColumnCount, rowCount = dgvVehicleList.RowCount;
+            List<string> items = new List<string>();
+            List<string> headerText = new List<string>();
+
+            foreach (DataGridViewRow dr in dgvVehicleList.Rows)
             {
-                SaveFileDialog save = new SaveFileDialog();
-                save.Filter = "PDF (*.pdf)|*.pdf";
-                save.FileName = "Results.pdf";
-                bool ErrorMessage = false;
-                if(save.ShowDialog() == DialogResult.OK)
+                foreach (DataGridViewCell dc in dr.Cells)
                 {
-                    if(File.Exists(save.FileName))
+                    if (dc.Value != null)
                     {
-                        try
-                        {
-                            File.Delete(save.FileName);
-                        }
-                        catch (Exception ex)
-                        {
-                            ErrorMessage = true;
-                            MessageBox.Show("Nije moguće napraviti ispis!");
-                        }
-                    }
-                    if(!ErrorMessage)
+                        items.Add(dc.Value.ToString());
+                    } else
                     {
-                        try
-                        {
-                            PdfPTable ptable = new PdfPTable(dgvVehicleList.Columns.Count);
-                            ptable.DefaultCell.Padding = 2;
-                            ptable.WidthPercentage = 100;
-                            ptable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-                            foreach(DataGridViewColumn col in dgvVehicleList.Columns)
-                            {
-                                PdfPCell pCell = new PdfPCell(new Phrase(col.HeaderText));
-                                ptable.AddCell(pCell);
-                            }
-                            foreach(DataGridViewRow viewRow in dgvVehicleList.Rows)
-                            {
-                               foreach(DataGridViewCell dCell in viewRow.Cells)
-                                {
-                                    ptable.AddCell(dCell.Value.ToString());
-                                }
-                            }
-
-                            using(FileStream fileStream =  new FileStream(save.FileName, FileMode.Create))
-                            {
-                                Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);
-                                PdfWriter.GetInstance(document, fileStream);
-                                document.Open();
-                                document.Add(ptable);
-                                document.Close();
-                                fileStream.Close();
-                            }
-                            MessageBox.Show("Uspiješan ispis!");
-                        }
-                        catch(Exception)
-                        {
-                            MessageBox.Show("Nije moguće napraviti ispis!");
-                        }
+                        items.Add(" ");
                     }
+
                 }
             }
-            else
+
+            foreach (DataGridViewColumn dr in dgvVehicleList.Columns)
             {
-                MessageBox.Show("Nema podataka za ispis!");
+                headerText.Add(dr.HeaderText);
             }
 
+            new PdfService().PrintToPdf(columnCount, rowCount, items, headerText);
         }
     }
 }

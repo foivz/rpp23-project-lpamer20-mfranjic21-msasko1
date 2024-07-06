@@ -47,7 +47,7 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Reservation> GetReservationsByCustomer(int id)
         {
             var query = from r in Entities
-                        where r.Customer.id == id
+                        where r.customerID == id
                         select r;
 
             return query;
@@ -56,7 +56,7 @@ namespace DataAccessLayer.Repositories
         public IQueryable<Reservation> GetReservationsByVehicle(int id)
         {
             var query = from r in Entities
-                        where r.Vehicle.id == id
+                        where r.vehicleID == id
                         select r;
 
             return query;

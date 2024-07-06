@@ -18,10 +18,14 @@ namespace Iznajmljivanje_Vozila.Forms
     public partial class FrmAddReservation : MaterialForm
     {
         private FrmReservation frmReservation;
-        public FrmAddReservation(FrmReservation frmReservation)
+        private bool reviewMode;
+        private Reservation reviewReservation;
+
+        public FrmAddReservation(bool review = false, Reservation reservation = null)
         {
             InitializeComponent();
-            this.frmReservation = frmReservation;
+            reviewMode = review;
+            reviewReservation = reservation;
         }
 
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
@@ -30,12 +34,35 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             LoadVehicleList();
 
-            if (Properties.Settings.Default.Theme == true)
+            if (Properties.Settings.Default.Theme)
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
 
-            
+            if (reviewMode)
+            {
+                this.Text = "Detalji transakcije";
+                this.txtCustomerId.ReadOnly = true;
+                this.cboVehicle.Enabled = false;
+                this.txtPickupDate.ReadOnly = true;
+                this.txtPickupLocation.ReadOnly = true;
+                this.txtReturnDate.ReadOnly = true;
+                this.txtReturnLocation.ReadOnly = true;
+                this.btnAdd.Visible = false;
+                this.btnClear.Visible = false;
+
+                FillData();
+            }
+        }
+
+        private void FillData()
+        {
+            this.txtCustomerId.Text = reviewReservation.Customer.ToString();
+            this.cboVehicle.Text = reviewReservation.Vehicle.ToString();
+            this.txtPickupDate.Text = reviewReservation.pickupDate.ToString();
+            this.txtPickupLocation.Text = reviewReservation.pickupLocation.ToString();
+            this.txtReturnDate.Text = reviewReservation.returnDate.ToString();
+            this.txtReturnLocation.Text = reviewReservation.returnLocation.ToString();
         }
 
         private void LoadVehicleList()
@@ -114,11 +141,6 @@ namespace Iznajmljivanje_Vozila.Forms
             reservationService.AddReservation(newReservation);
             MessageBox.Show("Dodavanje rezervacije uspješno.");
             ClearForm();
-
-
-            this.frmReservation.LoadReservations();
-
-
 
         }
 

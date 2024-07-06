@@ -48,14 +48,17 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.2.RTL.2.3.1.1\lib\net48\MaterialSkin.dll</HintPath>
@@ -63,7 +66,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -125,11 +130,23 @@
     <Compile Include="Forms\FrmAddNewCustomer.Designer.cs">
       <DependentUpon>FrmAddNewCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAddNewQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAddNewQuestion.Designer.cs">
+      <DependentUpon>FrmAddNewQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAddReservation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmAddReservation.Designer.cs">
       <DependentUpon>FrmAddReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAnswerQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAnswerQuestion.Designer.cs">
+      <DependentUpon>FrmAnswerQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmCustomerManagement.cs">
       <SubType>Form</SubType>
@@ -213,6 +230,9 @@
     <EmbeddedResource Include="Forms\FrmAddNewCustomer.resx">
       <DependentUpon>FrmAddNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddNewQuestion.resx">
+      <DependentUpon>FrmAddNewQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddReservation.resx">
       <DependentUpon>FrmAddReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,9 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmReservation.resx">
       <DependentUpon>FrmReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmReservationRecipe.resx">
-      <DependentUpon>FrmReservationRecipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmStatistic.resx">
       <DependentUpon>FrmStatistic.cs</DependentUpon>
@@ -290,6 +307,10 @@
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
       <Project>{93b680ff-e6f7-4650-9045-18676ddc1b10}</Project>
       <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{83cba43c-f1c6-464c-b459-925e1ccdc4c1}</Project>
+      <Name>DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
       <Project>{38095d5d-4afa-48ae-b1d5-44b89bdd4d8c}</Project>
