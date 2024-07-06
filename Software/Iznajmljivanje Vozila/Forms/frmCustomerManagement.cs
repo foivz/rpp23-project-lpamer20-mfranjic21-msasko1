@@ -28,7 +28,7 @@ namespace Iznajmljivanje_Vozila.Forms
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.Theme == true)
+            if (Properties.Settings.Default.Theme)
                 TManager.Theme = MaterialSkinManager.Themes.LIGHT;
             else
                 TManager.Theme = MaterialSkinManager.Themes.DARK;
@@ -73,8 +73,13 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             Customer customer = dgvCustomers.CurrentRow.DataBoundItem as Customer;
 
-            var services = new CustomerService();
-            services.RemoveCustomer(customer);
+            try
+            {
+                new CustomerService().RemoveCustomer(customer);
+            } catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Upozorenje");
+            }
 
             ShowAllCustomers();
         }
@@ -83,8 +88,7 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             Customer customer = dgvCustomers.CurrentRow.DataBoundItem as Customer;
 
-            var services = new CustomerService();
-            services.BlockCustomer(customer);
+            new CustomerService().BlockCustomer(customer);
 
             ShowAllCustomers();
         }

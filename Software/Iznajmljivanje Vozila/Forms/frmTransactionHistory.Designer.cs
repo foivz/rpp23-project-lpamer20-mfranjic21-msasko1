@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvTransactionHistory = new System.Windows.Forms.DataGridView();
-            this.btnCreateReceipe = new MaterialSkin.Controls.MaterialButton();
             this.btnCreateReport = new MaterialSkin.Controls.MaterialButton();
             this.btnRefresh = new MaterialSkin.Controls.MaterialButton();
             this.btnSort = new MaterialSkin.Controls.MaterialButton();
             this.cmbSortBy = new System.Windows.Forms.ComboBox();
             this.lblSortBy = new MaterialSkin.Controls.MaterialLabel();
+            this.btnDetails = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,26 +46,6 @@
             this.dgvTransactionHistory.Size = new System.Drawing.Size(740, 260);
             this.dgvTransactionHistory.TabIndex = 0;
             // 
-            // btnCreateReceipe
-            // 
-            this.btnCreateReceipe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCreateReceipe.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnCreateReceipe.Depth = 0;
-            this.btnCreateReceipe.HighEmphasis = true;
-            this.btnCreateReceipe.Icon = null;
-            this.btnCreateReceipe.Location = new System.Drawing.Point(638, 399);
-            this.btnCreateReceipe.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnCreateReceipe.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCreateReceipe.Name = "btnCreateReceipe";
-            this.btnCreateReceipe.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnCreateReceipe.Size = new System.Drawing.Size(132, 36);
-            this.btnCreateReceipe.TabIndex = 1;
-            this.btnCreateReceipe.Text = "Kreiraj račun";
-            this.btnCreateReceipe.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnCreateReceipe.UseAccentColor = false;
-            this.btnCreateReceipe.UseVisualStyleBackColor = true;
-            this.btnCreateReceipe.Click += new System.EventHandler(this.btnCreateReceipe_Click);
-            // 
             // btnCreateReport
             // 
             this.btnCreateReport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -73,17 +53,18 @@
             this.btnCreateReport.Depth = 0;
             this.btnCreateReport.HighEmphasis = true;
             this.btnCreateReport.Icon = null;
-            this.btnCreateReport.Location = new System.Drawing.Point(472, 399);
+            this.btnCreateReport.Location = new System.Drawing.Point(613, 399);
             this.btnCreateReport.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCreateReport.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnCreateReport.Size = new System.Drawing.Size(158, 36);
+            this.btnCreateReport.Size = new System.Drawing.Size(156, 36);
             this.btnCreateReport.TabIndex = 2;
             this.btnCreateReport.Text = "Kreiraj izvještaj";
             this.btnCreateReport.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCreateReport.UseAccentColor = false;
             this.btnCreateReport.UseVisualStyleBackColor = true;
+            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click);
             // 
             // btnRefresh
             // 
@@ -97,7 +78,7 @@
             this.btnRefresh.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnRefresh.Size = new System.Drawing.Size(134, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(132, 36);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Osvježi prikaz";
             this.btnRefresh.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -117,7 +98,7 @@
             this.btnSort.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSort.Name = "btnSort";
             this.btnSort.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSort.Size = new System.Drawing.Size(90, 36);
+            this.btnSort.Size = new System.Drawing.Size(89, 36);
             this.btnSort.TabIndex = 4;
             this.btnSort.Text = "Sortiraj";
             this.btnSort.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -145,19 +126,39 @@
             this.lblSortBy.TabIndex = 6;
             this.lblSortBy.Text = "Soritraj prema:";
             // 
-            // frmTransactionHistory
+            // btnDetails
+            // 
+            this.btnDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnDetails.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnDetails.Depth = 0;
+            this.btnDetails.HighEmphasis = true;
+            this.btnDetails.Icon = null;
+            this.btnDetails.Location = new System.Drawing.Point(528, 399);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDetails.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnDetails.Size = new System.Drawing.Size(77, 36);
+            this.btnDetails.TabIndex = 7;
+            this.btnDetails.Text = "Detalji";
+            this.btnDetails.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnDetails.UseAccentColor = false;
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            // 
+            // FrmTransactionHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.lblSortBy);
             this.Controls.Add(this.cmbSortBy);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnCreateReport);
-            this.Controls.Add(this.btnCreateReceipe);
             this.Controls.Add(this.dgvTransactionHistory);
-            this.Name = "frmTransactionHistory";
+            this.Name = "FrmTransactionHistory";
             this.Text = "Povijest transakcija";
             this.Load += new System.EventHandler(this.frmTransactionHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactionHistory)).EndInit();
@@ -169,11 +170,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTransactionHistory;
-        private MaterialSkin.Controls.MaterialButton btnCreateReceipe;
         private MaterialSkin.Controls.MaterialButton btnCreateReport;
         private MaterialSkin.Controls.MaterialButton btnRefresh;
         private MaterialSkin.Controls.MaterialButton btnSort;
         private System.Windows.Forms.ComboBox cmbSortBy;
         private MaterialSkin.Controls.MaterialLabel lblSortBy;
+        private MaterialSkin.Controls.MaterialButton btnDetails;
     }
 }

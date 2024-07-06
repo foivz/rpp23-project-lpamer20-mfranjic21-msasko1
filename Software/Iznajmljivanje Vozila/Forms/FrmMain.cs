@@ -1,4 +1,7 @@
-﻿using MaterialSkin;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
+using EntitiesLayer.Entities;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -17,30 +20,63 @@ namespace Iznajmljivanje_Vozila.Forms
     {
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
         private Form currentForm;
+        EmployeeService employeeService = new EmployeeService();
 
         private Panel panelButtons;
 
-        public FrmMain()
+        public FrmMain(string username)
         {
             InitializeComponent();
             IsMdiContainer = true;
 
+            LoggedUserService.Init(employeeService.GetEmployee(username));
             
             panelButtons = new Panel();
             panelButtons.Dock = DockStyle.Top;
             panelButtons.Height = 40;
-            
+
+            int buttonSpace = 5;
+            int buttonPosition = buttonSpace;
 
             MaterialButton buttonFormReservations = new MaterialButton();
             buttonFormReservations.Text = "Rezervacije";
             buttonFormReservations.Click += btnReservations_Click;
+            buttonFormReservations.Location = new System.Drawing.Point(buttonPosition, 0);
             panelButtons.Controls.Add(buttonFormReservations);
-            
+
+            buttonPosition += buttonFormReservations.Width + buttonSpace;
+
             MaterialButton buttonFormVehicleStatus = new MaterialButton();
             buttonFormVehicleStatus.Text = "Status vozila";
             buttonFormVehicleStatus.Click += btnVehicleStatus_Click;
-            buttonFormVehicleStatus.Location = new System.Drawing.Point(120, 0);
+            buttonFormVehicleStatus.Location = new System.Drawing.Point(buttonPosition, 0);
             panelButtons.Controls.Add(buttonFormVehicleStatus);
+
+            buttonPosition += buttonFormVehicleStatus.Width + buttonSpace;
+
+            MaterialButton buttonFormCustomerSupport = new MaterialButton();
+            buttonFormCustomerSupport.Text = "Korisnička podrška";
+            buttonFormCustomerSupport.Click += btnCustomerSupport_Click;
+            buttonFormCustomerSupport.Location = new System.Drawing.Point(buttonPosition, 0);
+            panelButtons.Controls.Add(buttonFormCustomerSupport);
+
+            buttonPosition += buttonFormCustomerSupport.Width + buttonSpace;
+
+            MaterialButton buttonFormCustomerMenagement = new MaterialButton();
+            buttonFormCustomerMenagement.Text = "Upravljanje korisnicika";
+            buttonFormCustomerMenagement.Click += btnCustomerMenagement_Click;
+            buttonFormCustomerMenagement.Location = new System.Drawing.Point(buttonPosition, 0);
+            panelButtons.Controls.Add(buttonFormCustomerMenagement);
+
+            buttonPosition += buttonFormCustomerMenagement.Width + buttonSpace;
+
+            MaterialButton buttonFormTransactionHistory = new MaterialButton();
+            buttonFormTransactionHistory.Text = "Povijest transakcija";
+            buttonFormTransactionHistory.Click += btnTransactionHistory_Click;
+            buttonFormTransactionHistory.Location = new System.Drawing.Point(buttonPosition, 0);
+            panelButtons.Controls.Add(buttonFormTransactionHistory);
+
+
 
             Controls.Add(panelButtons);
         }
@@ -90,5 +126,20 @@ namespace Iznajmljivanje_Vozila.Forms
         {
             OpenForm(new FrmVehicleStatus());
         }
+
+        private void btnCustomerSupport_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmCustomerSupport());
+        }
+
+        private void btnCustomerMenagement_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmCustomerManagement());
+        }
+        private void btnTransactionHistory_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmTransactionHistory());
+        }
     }
 }
+

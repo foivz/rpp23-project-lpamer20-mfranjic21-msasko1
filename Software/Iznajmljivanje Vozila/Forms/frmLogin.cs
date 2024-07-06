@@ -113,7 +113,7 @@ namespace Iznajmljivanje_Vozila
             {
                 //MessageBox.Show("Uspješna prijava");
                 this.Hide();
-                FrmMain frmMain = new FrmMain();
+                FrmMain frmMain = new FrmMain(username);
                 frmMain.Closed += (s, args) => this.Close();
                 frmMain.Show();
                 
@@ -219,7 +219,7 @@ namespace Iznajmljivanje_Vozila
                         if (login)
                         {
                             this.Hide();
-                            FrmMain frmMain = new FrmMain();
+                            FrmMain frmMain = new FrmMain(username);
                             frmMain.Closed += (s, args) => this.Close();
                             frmMain.Show();
                         }

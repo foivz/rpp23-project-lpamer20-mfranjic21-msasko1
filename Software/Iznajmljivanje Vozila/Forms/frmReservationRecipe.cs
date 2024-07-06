@@ -1,7 +1,4 @@
-﻿using BusinessLogicLayer;
-using EntitiesLayer.Entities;
-using MaterialSkin;
-using MaterialSkin.Controls;
+﻿using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,25 +11,13 @@ using System.Windows.Forms;
 
 namespace Iznajmljivanje_Vozila.Forms
 {
-    public partial class FrmReservationRecipe : MaterialForm
+    public partial class FrmReservationRecipe : Form
     {
-        private ReservationService services = new ReservationService();
-
-        Reservation reservation;
-        public FrmReservationRecipe(Reservation selectedReservation)
+        public Reservation selectedReservation;
+        public FrmReservationRecipe(Reservation reservation)
         {
-            reservation = selectedReservation;
+            selectedReservation = reservation;
             InitializeComponent();
-        }
-
-        MaterialSkinManager TManager = MaterialSkinManager.Instance;
-
-        private void frmReservationRecipe_Load(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.Theme == true)
-                TManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            else
-                TManager.Theme = MaterialSkinManager.Themes.DARK;
         }
     }
 }
